@@ -50,6 +50,10 @@ class FirebaseSession: ObservableObject {
         ])
     }
 
+    func login(email: String, password: String, handler: @escaping AuthDataResultCallback) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: handler)
+    }
+
     func logout() {
         try! Auth.auth().signOut()
         self.isLoggedIn = false

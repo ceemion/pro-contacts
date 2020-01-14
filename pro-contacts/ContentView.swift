@@ -17,7 +17,7 @@ private let dateFormatter: DateFormatter = {
 
 struct ContentView: View {
     @State private var dates = [Date]()
-    
+
     @EnvironmentObject var session: FirebaseSession
 
     var body: some View {
