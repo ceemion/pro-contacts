@@ -21,6 +21,18 @@
 		36EFB6C223CD5EF8005752D5 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6C123CD5EF8005752D5 /* LandingView.swift */; };
 		36EFB6C523CD5F90005752D5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6C423CD5F90005752D5 /* RegisterView.swift */; };
 		36EFB6C723CD5FA4005752D5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6C623CD5FA4005752D5 /* LoginView.swift */; };
+		36EFB6D823CE072C005752D5 /* NewYorkSmall-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6CC23CE065D005752D5 /* NewYorkSmall-BoldItalic.otf */; };
+		36EFB6D923CE072C005752D5 /* NewYorkSmall-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6CD23CE065D005752D5 /* NewYorkSmall-Bold.otf */; };
+		36EFB6DA23CE072C005752D5 /* NewYorkSmall-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6CE23CE065D005752D5 /* NewYorkSmall-BlackItalic.otf */; };
+		36EFB6DB23CE072C005752D5 /* NewYorkSmall-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6CF23CE065D005752D5 /* NewYorkSmall-Medium.otf */; };
+		36EFB6DC23CE072C005752D5 /* NewYorkSmall-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D023CE065D005752D5 /* NewYorkSmall-HeavyItalic.otf */; };
+		36EFB6DD23CE072C005752D5 /* NewYorkSmall-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D123CE065D005752D5 /* NewYorkSmall-Black.otf */; };
+		36EFB6DE23CE072C005752D5 /* NewYorkSmall-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D223CE065D005752D5 /* NewYorkSmall-SemiboldItalic.otf */; };
+		36EFB6DF23CE072C005752D5 /* NewYorkSmall-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D323CE065D005752D5 /* NewYorkSmall-Semibold.otf */; };
+		36EFB6E023CE072C005752D5 /* NewYorkSmall-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D423CE065D005752D5 /* NewYorkSmall-RegularItalic.otf */; };
+		36EFB6E123CE072C005752D5 /* NewYorkSmall-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D523CE065D005752D5 /* NewYorkSmall-Heavy.otf */; };
+		36EFB6E223CE072C005752D5 /* NewYorkSmall-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D623CE065D005752D5 /* NewYorkSmall-Regular.otf */; };
+		36EFB6E323CE072C005752D5 /* NewYorkSmall-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D723CE065D005752D5 /* NewYorkSmall-MediumItalic.otf */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -65,6 +77,18 @@
 		36EFB6C123CD5EF8005752D5 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		36EFB6C423CD5F90005752D5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		36EFB6C623CD5FA4005752D5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		36EFB6CC23CE065D005752D5 /* NewYorkSmall-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-BoldItalic.otf"; sourceTree = "<group>"; };
+		36EFB6CD23CE065D005752D5 /* NewYorkSmall-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Bold.otf"; sourceTree = "<group>"; };
+		36EFB6CE23CE065D005752D5 /* NewYorkSmall-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-BlackItalic.otf"; sourceTree = "<group>"; };
+		36EFB6CF23CE065D005752D5 /* NewYorkSmall-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Medium.otf"; sourceTree = "<group>"; };
+		36EFB6D023CE065D005752D5 /* NewYorkSmall-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-HeavyItalic.otf"; sourceTree = "<group>"; };
+		36EFB6D123CE065D005752D5 /* NewYorkSmall-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Black.otf"; sourceTree = "<group>"; };
+		36EFB6D223CE065D005752D5 /* NewYorkSmall-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		36EFB6D323CE065D005752D5 /* NewYorkSmall-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Semibold.otf"; sourceTree = "<group>"; };
+		36EFB6D423CE065D005752D5 /* NewYorkSmall-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-RegularItalic.otf"; sourceTree = "<group>"; };
+		36EFB6D523CE065D005752D5 /* NewYorkSmall-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Heavy.otf"; sourceTree = "<group>"; };
+		36EFB6D623CE065D005752D5 /* NewYorkSmall-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Regular.otf"; sourceTree = "<group>"; };
+		36EFB6D723CE065D005752D5 /* NewYorkSmall-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-MediumItalic.otf"; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +175,7 @@
 				36EFB6BD23CD52F7005752D5 /* Models */,
 				36EFB6C023CD5534005752D5 /* Services */,
 				36EFB6C323CD5F02005752D5 /* Views */,
+				36EFB6C923CE065D005752D5 /* Fonts */,
 				36EFB69123CCD6AA005752D5 /* Preview Content */,
 			);
 			path = "pro-contacts";
@@ -214,6 +239,33 @@
 				36EFB6C623CD5FA4005752D5 /* LoginView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		36EFB6C923CE065D005752D5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				36EFB6CB23CE065D005752D5 /* New-York-OTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		36EFB6CB23CE065D005752D5 /* New-York-OTF */ = {
+			isa = PBXGroup;
+			children = (
+				36EFB6CC23CE065D005752D5 /* NewYorkSmall-BoldItalic.otf */,
+				36EFB6CD23CE065D005752D5 /* NewYorkSmall-Bold.otf */,
+				36EFB6CE23CE065D005752D5 /* NewYorkSmall-BlackItalic.otf */,
+				36EFB6CF23CE065D005752D5 /* NewYorkSmall-Medium.otf */,
+				36EFB6D023CE065D005752D5 /* NewYorkSmall-HeavyItalic.otf */,
+				36EFB6D123CE065D005752D5 /* NewYorkSmall-Black.otf */,
+				36EFB6D223CE065D005752D5 /* NewYorkSmall-SemiboldItalic.otf */,
+				36EFB6D323CE065D005752D5 /* NewYorkSmall-Semibold.otf */,
+				36EFB6D423CE065D005752D5 /* NewYorkSmall-RegularItalic.otf */,
+				36EFB6D523CE065D005752D5 /* NewYorkSmall-Heavy.otf */,
+				36EFB6D623CE065D005752D5 /* NewYorkSmall-Regular.otf */,
+				36EFB6D723CE065D005752D5 /* NewYorkSmall-MediumItalic.otf */,
+			);
+			path = "New-York-OTF";
 			sourceTree = "<group>";
 		};
 		78E6D1B015BCD4ECA1B78B2E /* Frameworks */ = {
@@ -334,8 +386,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EFB6E323CE072C005752D5 /* NewYorkSmall-MediumItalic.otf in Resources */,
+				36EFB6DE23CE072C005752D5 /* NewYorkSmall-SemiboldItalic.otf in Resources */,
+				36EFB6DC23CE072C005752D5 /* NewYorkSmall-HeavyItalic.otf in Resources */,
 				36EFB69623CCD6AA005752D5 /* LaunchScreen.storyboard in Resources */,
+				36EFB6DA23CE072C005752D5 /* NewYorkSmall-BlackItalic.otf in Resources */,
 				36EFB6BA23CD48F3005752D5 /* GoogleService-Info.plist in Resources */,
+				36EFB6E023CE072C005752D5 /* NewYorkSmall-RegularItalic.otf in Resources */,
+				36EFB6D923CE072C005752D5 /* NewYorkSmall-Bold.otf in Resources */,
+				36EFB6DD23CE072C005752D5 /* NewYorkSmall-Black.otf in Resources */,
+				36EFB6DB23CE072C005752D5 /* NewYorkSmall-Medium.otf in Resources */,
+				36EFB6E223CE072C005752D5 /* NewYorkSmall-Regular.otf in Resources */,
+				36EFB6DF23CE072C005752D5 /* NewYorkSmall-Semibold.otf in Resources */,
+				36EFB6D823CE072C005752D5 /* NewYorkSmall-BoldItalic.otf in Resources */,
+				36EFB6E123CE072C005752D5 /* NewYorkSmall-Heavy.otf in Resources */,
 				36EFB69323CCD6AA005752D5 /* Preview Assets.xcassets in Resources */,
 				36EFB69023CCD6AA005752D5 /* Assets.xcassets in Resources */,
 			);
