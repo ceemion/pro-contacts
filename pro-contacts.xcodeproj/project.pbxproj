@@ -16,6 +16,7 @@
 		36EFB6A123CCD6AA005752D5 /* pro_contactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6A023CCD6AA005752D5 /* pro_contactsTests.swift */; };
 		36EFB6AC23CCD6AA005752D5 /* pro_contactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6AB23CCD6AA005752D5 /* pro_contactsUITests.swift */; };
 		36EFB6BA23CD48F3005752D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */; };
+		36EFB6BC23CD52EB005752D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6BB23CD52EB005752D5 /* User.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -55,6 +56,7 @@
 		36EFB6AB23CCD6AA005752D5 /* pro_contactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pro_contactsUITests.swift; sourceTree = "<group>"; };
 		36EFB6AD23CCD6AA005752D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36EFB6BB23CD52EB005752D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				36EFB69423CCD6AA005752D5 /* LaunchScreen.storyboard */,
 				36EFB69723CCD6AA005752D5 /* Info.plist */,
 				36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */,
+				36EFB6BD23CD52F7005752D5 /* Models */,
 				36EFB69123CCD6AA005752D5 /* Preview Content */,
 			);
 			path = "pro-contacts";
@@ -167,6 +170,14 @@
 				36EFB6AD23CCD6AA005752D5 /* Info.plist */,
 			);
 			path = "pro-contactsUITests";
+			sourceTree = "<group>";
+		};
+		36EFB6BD23CD52F7005752D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36EFB6BB23CD52EB005752D5 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		78E6D1B015BCD4ECA1B78B2E /* Frameworks */ = {
@@ -401,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EFB6BC23CD52EB005752D5 /* User.swift in Sources */,
 				36EFB68A23CCD6A8005752D5 /* AppDelegate.swift in Sources */,
 				36EFB68C23CCD6A8005752D5 /* SceneDelegate.swift in Sources */,
 				36EFB68E23CCD6A8005752D5 /* ContentView.swift in Sources */,
