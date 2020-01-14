@@ -33,6 +33,7 @@
 		36EFB6E123CE072C005752D5 /* NewYorkSmall-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D523CE065D005752D5 /* NewYorkSmall-Heavy.otf */; };
 		36EFB6E223CE072C005752D5 /* NewYorkSmall-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D623CE065D005752D5 /* NewYorkSmall-Regular.otf */; };
 		36EFB6E323CE072C005752D5 /* NewYorkSmall-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6D723CE065D005752D5 /* NewYorkSmall-MediumItalic.otf */; };
+		36EFB6E823CE07BE005752D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6E723CE07BE005752D5 /* Constants.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -89,6 +90,7 @@
 		36EFB6D523CE065D005752D5 /* NewYorkSmall-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Heavy.otf"; sourceTree = "<group>"; };
 		36EFB6D623CE065D005752D5 /* NewYorkSmall-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Regular.otf"; sourceTree = "<group>"; };
 		36EFB6D723CE065D005752D5 /* NewYorkSmall-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-MediumItalic.otf"; sourceTree = "<group>"; };
+		36EFB6E723CE07BE005752D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 				36EFB69423CCD6AA005752D5 /* LaunchScreen.storyboard */,
 				36EFB69723CCD6AA005752D5 /* Info.plist */,
 				36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */,
+				36EFB6E623CE0772005752D5 /* Helpers */,
 				36EFB6BD23CD52F7005752D5 /* Models */,
 				36EFB6C023CD5534005752D5 /* Services */,
 				36EFB6C323CD5F02005752D5 /* Views */,
@@ -266,6 +269,14 @@
 				36EFB6D723CE065D005752D5 /* NewYorkSmall-MediumItalic.otf */,
 			);
 			path = "New-York-OTF";
+			sourceTree = "<group>";
+		};
+		36EFB6E623CE0772005752D5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				36EFB6E723CE07BE005752D5 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		78E6D1B015BCD4ECA1B78B2E /* Frameworks */ = {
@@ -520,6 +531,7 @@
 				36EFB68E23CCD6A8005752D5 /* ContentView.swift in Sources */,
 				36EFB6C723CD5FA4005752D5 /* LoginView.swift in Sources */,
 				36EFB6BF23CD552D005752D5 /* FirebaseSession.swift in Sources */,
+				36EFB6E823CE07BE005752D5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
