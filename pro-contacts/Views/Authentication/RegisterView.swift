@@ -17,6 +17,8 @@ struct RegisterView: View {
     @State var phone: String = ""
     @State var password: String = ""
 
+    @State var showInputAlert: Bool = false
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("""
@@ -61,7 +63,7 @@ struct RegisterView: View {
             Button(action: { self.register() }) {
                 HStack {
                     Spacer()
-                    Text("Register")
+                    Text("Create Account")
                         .tracking(0.5)
                     Spacer()
                 }
@@ -73,11 +75,17 @@ struct RegisterView: View {
             }
             Spacer()
         }
+        .alert(isPresented: $showInputAlert) {
+            Alert(
+                title: Text("All fields are required!"),
+                dismissButton: .default(Text("Ok"))
+            )
+        }
         .padding()
     }
 
     func register() {
-        if !email.isEmpty && !password.isEmpty {
+        if !email.isEmpty && !password.isEmpty && !name.isEmpty && !phone.isEmpty {
             session.register(name: "", email: email, phone: "", password: password) { (result, error) in
                 if error != nil {
                     print("Create User Error", error as Any)
@@ -89,6 +97,8 @@ struct RegisterView: View {
                     self.phone = ""
                 }
             }
+        } else {
+            self.showInputAlert.toggle()
         }
     }
 }
