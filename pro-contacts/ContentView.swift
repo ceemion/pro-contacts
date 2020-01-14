@@ -17,23 +17,46 @@ private let dateFormatter: DateFormatter = {
 
 struct ContentView: View {
     @State private var dates = [Date]()
+    
+    @EnvironmentObject var session: FirebaseSession
 
     var body: some View {
-        NavigationView {
-            MasterView(dates: $dates)
-                .navigationBarTitle(Text("Pro. Contacts"))
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: Button(
-                        action: {
-                            withAnimation { self.dates.insert(Date(), at: 0) }
-                        }
-                    ) {
-                        Image(systemName: "plus")
-                    }
-                )
-            DetailView()
-        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        Group {
+            if session.currentUser != nil {
+                NavigationView {
+                    MasterView(dates: $dates)
+                        .navigationBarTitle(Text("ProContacts"))
+                        .navigationBarItems(
+                            leading: EditButton(),
+                            trailing: HStack {
+                                Button(
+                                    action: {
+                                        withAnimation { self.session.logout() }
+                                    }
+                                ) {
+                                    Image(systemName: "power")
+                                        .padding()
+                                }
+                                Button(
+                                    action: {
+                                        withAnimation { self.dates.insert(Date(), at: 0) }
+                                    }
+                                ) {
+                                    Image(systemName: "plus")
+                                }
+                            }
+                        )
+                    DetailView()
+                }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+            } else {
+                LandingView()
+            }
+        }
+        .onAppear(perform: getUser)
+    }
+
+    func getUser() {
+        session.listen()
     }
 }
 
