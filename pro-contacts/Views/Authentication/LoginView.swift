@@ -23,25 +23,25 @@ struct LoginView: View {
                 Welcome back.
                 Great to see you again
                 """)
-//                .font(Font.custom(Constants.Font.titleMed, size: 25))
-//                .foregroundColor(Color("text"))
+                .font(Font.custom(Constants.Font.titleMed, size: 25))
+                .foregroundColor(Color("text"))
 
 //            Text(userAccount.error.error)
 //                .font(.footnote)
 //                .foregroundColor(Color("danger"))
 
             VStack(alignment: .leading, spacing: 5) {
-//                Label(text: "Email")
-                TextField("email", text: $email)
-//                    .textFieldStyle(HoplonTextFieldStyle())
+                Label(text: "Email")
+                TextField("", text: $email)
+                    .textFieldStyle(ProTextFieldStyle())
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
             }
 
             VStack(alignment: .leading, spacing: 5) {
-//                Label(text: "Password")
-                SecureField("password", text: $password)
-//                    .textFieldStyle(HoplonTextFieldStyle())
+                Label(text: "Password")
+                SecureField("", text: $password)
+                    .textFieldStyle(ProTextFieldStyle())
             }
 
             Button(action: { self.login() }) {
@@ -51,11 +51,11 @@ struct LoginView: View {
                         .tracking(0.5)
                     Spacer()
                 }
-//                .font(Font.custom(Constants.Font.title, size: 16))
-//                .foregroundColor(Color("primary"))
+                .font(Font.custom(Constants.Font.title, size: 16))
+                .foregroundColor(Color("primary"))
                 .padding()
-//                .background(Color("primary").opacity(0.2))
-//                .cornerRadius(10)
+                .background(Color("primary").opacity(0.2))
+                .cornerRadius(10)
             }
             Spacer()
         }
