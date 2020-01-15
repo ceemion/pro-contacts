@@ -12,6 +12,7 @@ struct MainView: View {
     @EnvironmentObject var session: FirebaseSession
 
     @State var dates = [Date]()
+    @State private var showPersonForm: Bool = false
 
     var body: some View {
         NavigationView {
@@ -20,25 +21,23 @@ struct MainView: View {
                 .navigationBarItems(
                     leading: EditButton(),
                     trailing: HStack {
-                        Button(
-                            action: {
-                                withAnimation { self.session.logout() }
-                            }
-                        ) {
-                            Image(systemName: "power")
-                                .padding()
-                        }
-                        Button(
-                            action: {
-                                withAnimation { self.dates.insert(Date(), at: 0) }
-                            }
-                        ) {
+//                        Button(action: { withAnimation { self.session.logout() } }) {
+//                            Image(systemName: "power")
+//                                .padding()
+//                        }
+                        Button(action: { self.showPersonForm.toggle() }) {
                             Image(systemName: "plus")
+                                .padding(.vertical)
                         }
                     }
                 )
             PersonDetailView()
-        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        }
+        .navigationViewStyle(DoubleColumnNavigationViewStyle())
+        .sheet(isPresented: $showPersonForm) {
+            PersonFormView()
+                .environmentObject(FirebaseSession())
+        }
     }
 }
 

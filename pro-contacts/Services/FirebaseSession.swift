@@ -17,8 +17,8 @@ class FirebaseSession: ObservableObject {
 
     var uid: String = Auth.auth().currentUser?.uid ?? ""
 
-    func databaseRef(uid: String) -> DatabaseReference {
-        return Database.database().reference(withPath: "\(String(describing: uid.isEmpty ? "Error" : uid))")
+    func databaseRef(_ uid: String, _ type: String) -> DatabaseReference {
+        return Database.database().reference(withPath: "\(type)/\(String(describing: uid.isEmpty ? "Error" : uid))")
     }
 
     // MARK: - Auth functions
@@ -60,4 +60,18 @@ class FirebaseSession: ObservableObject {
         self.currentUser = nil
         self.uid = ""
     }
+
+    // MARK: - Professional Contacts (Persons) functions
+    func postContact(payload: Dictionary<String, Any>, handler: @escaping (DatabaseReference, Error?) -> ()) {
+        // Generates number going up as time goes on, sets order of contacts by how old they are.
+        let date = Int(Date.timeIntervalSinceReferenceDate * 1000)
+        databaseRef(self.uid, "contacts").child(String(date)).setValue(payload) { (error: Error?, ref: DatabaseReference) in
+            handler(ref, error)
+        }
+    }
 }
+
+//and For Decoding Unix Epoch time to Date().
+//
+//let myTimeInterval = TimeInterval(timestamp)
+//let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
