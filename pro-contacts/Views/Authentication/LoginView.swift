@@ -20,7 +20,7 @@ struct LoginView: View {
     @State var showInputAlert: Bool = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("""
                 Welcome back.
                 Great to see you again

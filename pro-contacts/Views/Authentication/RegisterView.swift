@@ -22,7 +22,7 @@ struct RegisterView: View {
     @State var showInputAlert: Bool = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("""
                 Let's create
                 your account
@@ -63,19 +63,29 @@ struct RegisterView: View {
             }
 
             Button(action: { self.register() }) {
-                HStack {
-                    Spacer()
-                    Text("Create Account")
-                        .tracking(0.5)
-                    Spacer()
+                Group {
+                    if loading {
+                        HStack {
+                            Spacer()
+                            ActivityIndicator(shouldAnimate: $loading)
+                            Spacer()
+                        }
+                    } else {
+                        HStack {
+                            Spacer()
+                            Text("Create Account")
+                                .tracking(0.5)
+                            Spacer()
+                        }
+                    }
                 }
                 .font(Font.custom(Constants.Font.title, size: 16))
-                .foregroundColor(Color("primary"))
+                .foregroundColor(onCreateDisabled() ? Color("gray") : Color("primary"))
                 .padding()
-                .background(Color("primary").opacity(0.2))
+                .background(onCreateDisabled() ? Color("gray").opacity(0.2) : Color("primary").opacity(0.2))
                 .cornerRadius(10)
             }
-            .disabled(canCreate())
+            .disabled(onCreateDisabled())
 
             Spacer()
         }
@@ -88,7 +98,7 @@ struct RegisterView: View {
         .padding()
     }
 
-    func canCreate() -> Bool {
+    func onCreateDisabled() -> Bool {
         return loading || email.isEmpty || password.isEmpty || name.isEmpty || phone.isEmpty
     }
 
