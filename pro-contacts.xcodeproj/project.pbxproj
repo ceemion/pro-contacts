@@ -36,6 +36,9 @@
 		36EFB6E823CE07BE005752D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6E723CE07BE005752D5 /* Constants.swift */; };
 		36EFB6EC23CE0BC6005752D5 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6EB23CE0BC6005752D5 /* Form.swift */; };
 		36EFB6EE23CF3FA6005752D5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6ED23CF3FA6005752D5 /* ActivityIndicator.swift */; };
+		36EFB6F423CF4D36005752D5 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F323CF4D36005752D5 /* PersonDetailView.swift */; };
+		36EFB6F623CF4D5C005752D5 /* PersonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F523CF4D5C005752D5 /* PersonsView.swift */; };
+		36EFB6F823CF4E68005752D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F723CF4E68005752D5 /* MainView.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -95,6 +98,9 @@
 		36EFB6E723CE07BE005752D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		36EFB6EB23CE0BC6005752D5 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		36EFB6ED23CF3FA6005752D5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		36EFB6F323CF4D36005752D5 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		36EFB6F523CF4D5C005752D5 /* PersonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsView.swift; sourceTree = "<group>"; };
+		36EFB6F723CF4E68005752D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +241,9 @@
 			children = (
 				36EFB6C823CD5FBC005752D5 /* Authentication */,
 				36EFB6C123CD5EF8005752D5 /* LandingView.swift */,
+				36EFB6F723CF4E68005752D5 /* MainView.swift */,
+				36EFB6F523CF4D5C005752D5 /* PersonsView.swift */,
+				36EFB6F323CF4D36005752D5 /* PersonDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -530,6 +539,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36EFB6C223CD5EF8005752D5 /* LandingView.swift in Sources */,
+				36EFB6F823CF4E68005752D5 /* MainView.swift in Sources */,
+				36EFB6F423CF4D36005752D5 /* PersonDetailView.swift in Sources */,
+				36EFB6F623CF4D5C005752D5 /* PersonsView.swift in Sources */,
 				36EFB6BC23CD52EB005752D5 /* User.swift in Sources */,
 				36EFB68A23CCD6A8005752D5 /* AppDelegate.swift in Sources */,
 				36EFB6C523CD5F90005752D5 /* RegisterView.swift in Sources */,
