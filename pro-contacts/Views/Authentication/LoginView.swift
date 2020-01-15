@@ -16,6 +16,7 @@ struct LoginView: View {
     @State var password: String = ""
 
     @State private var loading: Bool = false
+    @State private var errorText: String = ""
 
     @State var showInputAlert: Bool = false
 
@@ -28,9 +29,7 @@ struct LoginView: View {
                 .font(Font.custom(Constants.Font.titleMed, size: 25))
                 .foregroundColor(Color("text"))
 
-//            Text(userAccount.error.error)
-//                .font(.footnote)
-//                .foregroundColor(Color("danger"))
+            FormError(text: errorText)
 
             VStack(alignment: .leading, spacing: 5) {
                 Label(text: "Email")
@@ -86,13 +85,20 @@ struct LoginView: View {
         return email.isEmpty || password.isEmpty || loading
     }
 
-    func login() {
-        if !email.isEmpty && !password.isEmpty {
-            self.loading = true
+    func initClick() {
+        self.loading = true
+        self.errorText = ""
+    }
 
+    func login() {
+        initClick()
+
+        if !email.isEmpty && !password.isEmpty {
             self.session.login(email: email, password: password) { (result, error) in
                 self.loading = false
+
                 if error != nil {
+                    self.errorText = error!.localizedDescription
                     print("Login Error: ", error as Any)
                 } else {
                     self.email = ""

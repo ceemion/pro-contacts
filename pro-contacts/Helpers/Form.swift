@@ -9,10 +9,10 @@
 import Foundation
 import SwiftUI
 
-struct Label: View {
+public struct Label: View {
     let text: String
 
-    var body: some View {
+    public var body: some View {
         Text(text.uppercased())
             .font(Font.custom(Constants.Font.main, size: 10))
             .foregroundColor(Color("gray"))
@@ -28,5 +28,20 @@ public struct ProTextFieldStyle : TextFieldStyle {
             .padding()
             .background(Color("inputBg"))
             .cornerRadius(10)
+    }
+}
+
+public struct FormError: View {
+    let text: String
+
+    public var body: some View {
+        Group {
+            if !text.isEmpty {
+                Text(text)
+                    .font(.footnote)
+                    .foregroundColor(Color("danger"))
+                    .padding(.vertical, 5)
+            }
+        }
     }
 }

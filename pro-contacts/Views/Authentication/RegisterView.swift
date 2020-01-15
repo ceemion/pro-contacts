@@ -12,12 +12,13 @@ struct RegisterView: View {
 
     @EnvironmentObject var session: FirebaseSession
 
-    @State var name: String = ""
-    @State var email: String = ""
-    @State var phone: String = ""
-    @State var password: String = ""
+    @State var name: String = "test"
+    @State var email: String = "testt"
+    @State var phone: String = "1234"
+    @State var password: String = "password123"
 
     @State private var loading: Bool = false
+    @State private var errorText: String = ""
 
     @State var showInputAlert: Bool = false
 
@@ -30,9 +31,7 @@ struct RegisterView: View {
                 .font(Font.custom(Constants.Font.titleMed, size: 25))
                 .foregroundColor(Color("text"))
 
-//            Text(userAccount.error.error)
-//                .font(.footnote)
-//                .foregroundColor(Color("danger"))
+            FormError(text: errorText)
 
             VStack(alignment: .leading, spacing: 5) {
                 Label(text: "Name")
@@ -102,10 +101,20 @@ struct RegisterView: View {
         return loading || email.isEmpty || password.isEmpty || name.isEmpty || phone.isEmpty
     }
 
+    func initClick() {
+        self.loading = true
+        self.errorText = ""
+    }
+
     func register() {
+        initClick()
+
         if !email.isEmpty && !password.isEmpty && !name.isEmpty && !phone.isEmpty {
             session.register(name: "", email: email, phone: "", password: password) { (result, error) in
+                self.loading = false
+
                 if error != nil {
+                    self.errorText = error!.localizedDescription
                     print("Create User Error", error as Any)
                 } else {
                     self.session.addUserToDb(name: self.name, email: self.email, phone: self.phone)
