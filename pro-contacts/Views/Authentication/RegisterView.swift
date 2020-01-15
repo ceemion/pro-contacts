@@ -12,10 +12,10 @@ struct RegisterView: View {
 
     @EnvironmentObject var session: FirebaseSession
 
-    @State var name: String = "test"
-    @State var email: String = "testt"
-    @State var phone: String = "1234"
-    @State var password: String = "password123"
+    @State var name: String = ""
+    @State var email: String = ""
+    @State var phone: String = ""
+    @State var password: String = ""
 
     @State private var loading: Bool = false
     @State private var errorText: String = ""

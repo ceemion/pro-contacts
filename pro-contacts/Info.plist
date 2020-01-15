@@ -20,6 +20,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NewYorkSmall-Regular.otf</string>
+		<string>NewYorkSmall-RegularItalic.otf</string>
+		<string>NewYorkSmall-Black.otf</string>
+		<string>NewYorkSmall-BlackItalic.otf</string>
+		<string>NewYorkSmall-Bold.otf</string>
+		<string>NewYorkSmall-BoldItalic.otf</string>
+		<string>NewYorkSmall-Heavy.otf</string>
+		<string>NewYorkSmall-HeavyItalic.otf</string>
+		<string>NewYorkSmall-Medium.otf</string>
+		<string>NewYorkSmall-MediumItalic.otf</string>
+		<string>NewYorkSmall-Semibold.otf</string>
+		<string>NewYorkSmall-SemiboldItalic.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,8 +71,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -65,21 +78,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NewYorkSmall-Regular.otf</string>
-		<string>NewYorkSmall-RegularItalic.otf</string>
-		<string>NewYorkSmall-Black.otf</string>
-		<string>NewYorkSmall-BlackItalic.otf</string>
-		<string>NewYorkSmall-Bold.otf</string>
-		<string>NewYorkSmall-BoldItalic.otf</string>
-		<string>NewYorkSmall-Heavy.otf</string>
-		<string>NewYorkSmall-HeavyItalic.otf</string>
-		<string>NewYorkSmall-Medium.otf</string>
-		<string>NewYorkSmall-MediumItalic.otf</string>
-		<string>NewYorkSmall-Semibold.otf</string>
-		<string>NewYorkSmall-SemiboldItalic.otf</string>
 	</array>
 </dict>
 </plist>
