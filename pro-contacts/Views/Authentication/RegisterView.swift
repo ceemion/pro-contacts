@@ -17,6 +17,8 @@ struct RegisterView: View {
     @State var phone: String = ""
     @State var password: String = ""
 
+    @State private var loading: Bool = false
+
     @State var showInputAlert: Bool = false
 
     var body: some View {
@@ -73,6 +75,8 @@ struct RegisterView: View {
                 .background(Color("primary").opacity(0.2))
                 .cornerRadius(10)
             }
+            .disabled(canCreate())
+
             Spacer()
         }
         .alert(isPresented: $showInputAlert) {
@@ -82,6 +86,10 @@ struct RegisterView: View {
             )
         }
         .padding()
+    }
+
+    func canCreate() -> Bool {
+        return loading || email.isEmpty || password.isEmpty || name.isEmpty || phone.isEmpty
     }
 
     func register() {
