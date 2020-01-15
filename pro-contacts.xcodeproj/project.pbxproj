@@ -40,6 +40,7 @@
 		36EFB6F623CF4D5C005752D5 /* PersonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F523CF4D5C005752D5 /* PersonsView.swift */; };
 		36EFB6F823CF4E68005752D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F723CF4E68005752D5 /* MainView.swift */; };
 		36EFB6FA23CF50BC005752D5 /* PersonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F923CF50BC005752D5 /* PersonFormView.swift */; };
+		36EFB6FC23CF6695005752D5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6FB23CF6695005752D5 /* Person.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -103,6 +104,7 @@
 		36EFB6F523CF4D5C005752D5 /* PersonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsView.swift; sourceTree = "<group>"; };
 		36EFB6F723CF4E68005752D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		36EFB6F923CF50BC005752D5 /* PersonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormView.swift; sourceTree = "<group>"; };
+		36EFB6FB23CF6695005752D5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				36EFB6BB23CD52EB005752D5 /* User.swift */,
+				36EFB6FB23CF6695005752D5 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				36EFB6C723CD5FA4005752D5 /* LoginView.swift in Sources */,
 				36EFB6EC23CE0BC6005752D5 /* Form.swift in Sources */,
 				36EFB6BF23CD552D005752D5 /* FirebaseSession.swift in Sources */,
+				36EFB6FC23CF6695005752D5 /* Person.swift in Sources */,
 				36EFB6E823CE07BE005752D5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

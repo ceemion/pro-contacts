@@ -15,9 +15,11 @@ class FirebaseSession: ObservableObject {
     @Published var currentUser: User?
     @Published var isLoggedIn: Bool?
 
+    @Published var contacts = [Person]()
+
     var uid: String = Auth.auth().currentUser?.uid ?? ""
 
-    func databaseRef(_ uid: String, _ type: String) -> DatabaseReference {
+    func databaseRef(_ type: String, _ uid: String) -> DatabaseReference {
         return Database.database().reference(withPath: "\(type)/\(String(describing: uid.isEmpty ? "Error" : uid))")
     }
 
@@ -29,6 +31,7 @@ class FirebaseSession: ObservableObject {
                 self.currentUser = User(uid: user.uid, name: "", email: user.email, phone: "")
                 self.uid = user.uid
                 self.isLoggedIn = true
+                self.getContacts()
             } else {
                 print("user is gone")
                 self.isLoggedIn = false
@@ -43,7 +46,7 @@ class FirebaseSession: ObservableObject {
     }
 
     func addUserToDb(name: String, email: String, phone: String) {
-        Database.database().reference().child("users").child(self.uid).setValue([
+        databaseRef("users", self.uid).setValue([
             "name": name,
             "email": email,
             "phone": phone
@@ -62,10 +65,24 @@ class FirebaseSession: ObservableObject {
     }
 
     // MARK: - Professional Contacts (Persons) functions
+    func getContacts() {
+        databaseRef("contacts", self.uid).observe(DataEventType.value) { (snapshot) in
+            print(snapshot)
+
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot {
+                    self.contacts.append(Person.init(snapshot: snapshot)!)
+                }
+            }
+            
+            print("self ff: ", self.contacts)
+        }
+    }
+
     func postContact(payload: Dictionary<String, Any>, handler: @escaping (DatabaseReference, Error?) -> ()) {
         // Generates number going up as time goes on, sets order of contacts by how old they are.
         let date = Int(Date.timeIntervalSinceReferenceDate * 1000)
-        databaseRef(self.uid, "contacts").child(String(date)).setValue(payload) { (error: Error?, ref: DatabaseReference) in
+        databaseRef("contacts", self.uid).child(String(date)).setValue(payload) { (error: Error?, ref: DatabaseReference) in
             handler(ref, error)
         }
     }

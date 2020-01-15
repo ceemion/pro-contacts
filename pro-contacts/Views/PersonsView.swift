@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -16,19 +17,20 @@ private let dateFormatter: DateFormatter = {
 }()
 
 struct PersonsView: View {
-    @Binding var dates: [Date]
+    @Binding var data: [Person]
 
     var body: some View {
         List {
-            ForEach(dates, id: \.self) { date in
-                NavigationLink(
-                    destination: PersonDetailView(selectedDate: date)
-                ) {
-                    Text("\(date, formatter: dateFormatter)")
-                }
-            }.onDelete { indices in
-                indices.forEach { self.dates.remove(at: $0) }
+            ForEach(data, id: \.id) { person in
+//                NavigationLink(
+//                    destination: PersonDetailView(selectedContact: contact)
+//                ) {
+                Text(person.firstName)
+//                }
             }
+//            .onDelete { indices in
+//                indices.forEach { self.dates.remove(at: $0) }
+//            }
         }
     }
 }

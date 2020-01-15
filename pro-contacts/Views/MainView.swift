@@ -11,12 +11,11 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var session: FirebaseSession
 
-    @State var dates = [Date]()
     @State private var showPersonForm: Bool = false
 
     var body: some View {
         NavigationView {
-            PersonsView(dates: $dates)
+            PersonsView(data: self.$session.contacts)
                 .navigationBarTitle(Text("ProContacts"))
                 .navigationBarItems(
                     leading: EditButton(),
