@@ -17,26 +17,24 @@ private let dateFormatter: DateFormatter = {
 }()
 
 struct PersonsView: View {
-    @Binding var data: [Person]
+    var data: [Person]
 
     var body: some View {
         List {
             ForEach(data, id: \.id) { person in
-//                NavigationLink(
-//                    destination: PersonDetailView(selectedContact: contact)
-//                ) {
-                Text(person.firstName)
-//                }
+                NavigationLink( destination: PersonDetailView(person: person) ) {
+                    Text("\(person.firstName) \(person.lastName)")
+                }
             }
-//            .onDelete { indices in
-//                indices.forEach { self.dates.remove(at: $0) }
-//            }
+            .onDelete { indices in
+                print("welcome")
+            }
         }
     }
 }
 
-//struct PersonsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PersonsView(dates: [Date])
-//    }
-//}
+struct PersonsView_Previews: PreviewProvider {
+    static var previews: some View {
+        PersonsView(data: [Person.init(firstName: "", lastName: "", email: "", phoneNumber: "", createdAt: 0, updatedAt: 0)])
+    }
+}

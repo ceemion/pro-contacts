@@ -15,6 +15,7 @@ class FirebaseSession: ObservableObject {
     @Published var currentUser: User?
     @Published var isLoggedIn: Bool?
 
+    @Published var fetchingContacts: Bool = true
     @Published var contacts = [Person]()
 
     var uid: String = Auth.auth().currentUser?.uid ?? ""
@@ -68,14 +69,16 @@ class FirebaseSession: ObservableObject {
     func getContacts() {
         databaseRef("contacts", self.uid).observe(DataEventType.value) { (snapshot) in
             print(snapshot)
+            var items = [Person]()
+            self.fetchingContacts = false
 
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot {
-                    self.contacts.append(Person.init(snapshot: snapshot)!)
+                    items.append(Person.init(snapshot: snapshot)!)
                 }
             }
-            
-            print("self ff: ", self.contacts)
+
+            self.contacts = items
         }
     }
 

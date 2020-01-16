@@ -16,21 +16,16 @@ private let dateFormatter: DateFormatter = {
 }()
 
 struct PersonDetailView: View {
-    var selectedDate: Date?
+    var person: Person
 
     var body: some View {
-        Group {
-            if selectedDate != nil {
-                Text("\(selectedDate!, formatter: dateFormatter)")
-            } else {
-                Text("Detail view content goes here")
-            }
-        }.navigationBarTitle(Text("Detail"))
+            Text(person.lastName)
+                .navigationBarTitle(Text("\(person.firstName) \(person.lastName)"))
     }
 }
 
 struct PersonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonDetailView()
+        PersonDetailView(person: Person.init(firstName: "", lastName: "", email: "", phoneNumber: "", createdAt: 0, updatedAt: 0))
     }
 }

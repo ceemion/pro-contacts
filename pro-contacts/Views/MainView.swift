@@ -15,23 +15,40 @@ struct MainView: View {
 
     var body: some View {
         NavigationView {
-            PersonsView(data: self.$session.contacts)
-                .navigationBarTitle(Text("ProContacts"))
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: HStack {
+            Group {
+                if self.session.fetchingContacts {
+                    ActivityIndicator(shouldAnimate: self.$session.fetchingContacts)
+                } else {
+                    if self.session.contacts.isEmpty {
+                        VStack {
+                            Text("You have no contacts.")
+                                .font(.footnote)
+                                .foregroundColor(Color("gray"))
+                                .padding(.vertical)
+                            Spacer()
+                        }
+                    } else {
+                        PersonsView(data: self.session.contacts)
+                    }
+                }
+            }
+            .navigationBarTitle(Text("ProContacts"))
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: HStack {
 //                        Button(action: { withAnimation { self.session.logout() } }) {
 //                            Image(systemName: "power")
 //                                .padding()
 //                        }
-                        Button(action: { self.showPersonForm.toggle() }) {
-                            Image(systemName: "plus")
-                                .padding(.vertical)
-                        }
+                    Button(action: { self.showPersonForm.toggle() }) {
+                        Image(systemName: "plus")
+                            .imageScale(.large)
+                            .padding(.vertical)
                     }
-                )
-            PersonDetailView()
+                }
+            )
         }
+        .accentColor(Color("primary"))
         .navigationViewStyle(DoubleColumnNavigationViewStyle())
         .sheet(isPresented: $showPersonForm) {
             PersonFormView()

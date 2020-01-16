@@ -11,6 +11,13 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var session: FirebaseSession
 
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: UIFont(name: Constants.Font.nav, size: 30)!]
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: UIFont(name: Constants.Font.nav, size: 16)!]
+    }
+
     var body: some View {
         Group {
             if session.currentUser != nil {
