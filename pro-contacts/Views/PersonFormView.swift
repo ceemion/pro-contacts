@@ -12,6 +12,8 @@ struct PersonFormView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var session: FirebaseSession
 
+    @State private var keyboardHeight: CGFloat = 0
+
     @State private var suffix: String = ""
     @State private var firstName: String = "John"
     @State private var lastName: String = "Travolta"
@@ -251,6 +253,20 @@ struct PersonFormView: View {
                     .disabled(self.isFormInvalid())
                     .accentColor(Color("primary"))
                 )
+        }
+        .offset(y: -self.keyboardHeight)
+        .animation(.spring())
+        .onAppear() {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
+                let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                let height = value.height
+
+                self.keyboardHeight = height - 50
+            }
+
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in
+               self.keyboardHeight = 0
+           }
         }
     }
 
