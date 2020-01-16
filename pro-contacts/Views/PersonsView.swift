@@ -20,16 +20,41 @@ struct PersonsView: View {
     var data: [Person]
 
     var body: some View {
-        List {
-            ForEach(data, id: \.id) { person in
-                NavigationLink( destination: PersonDetailView(person: person) ) {
-                    Text("\(person.firstName) \(person.lastName)")
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack(alignment: .leading, spacing: 10) {
+                ForEach(data, id: \.id) { person in
+                    NavigationLink( destination: PersonDetailView(person: person) ) {
+                        RowView(person: person)
+                            .font(.body)
+                            .padding(10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .fill(Color("rowsBg")))
+                    }
                 }
             }
-            .onDelete { indices in
-                print("welcome")
-            }
+            .padding(.horizontal, 10)
+            //.onDelete { indices in
+            //    print("welcome")
+            //}
         }
+    }
+}
+
+struct RowView: View {
+    let person: Person
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("\(person.firstName) \(person.lastName)")
+                .accentColor(Color("text"))
+            HStack {
+                Spacer()
+            }
+            Text(person.email)
+                .accentColor(Color("text").opacity(0.5))
+        }
+        .font(Font.custom(Constants.Font.main, size: CGFloat(Constants.TextSizes.body)))
     }
 }
 

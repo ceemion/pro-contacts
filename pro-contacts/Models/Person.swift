@@ -12,20 +12,38 @@ import FirebaseDatabase
 struct Person: Identifiable {
     let id: String
     let ref: DatabaseReference?
+    let suffix: String?
     let firstName: String
     let lastName: String
     let email: String
     let phoneNumber: String
+    let website: String?
+    let industry: String
+    let company: String?
+    let department: String?
+    let jobTitle: String
+    let workEmail: String?
+    let workPhoneNumber: String?
+    let notes: String
     let createdAt: Int
     let updatedAt: Int
 
     init(firstName: String, lastName: String, key: String = "", email: String, phoneNumber: String, createdAt: Int, updatedAt: Int) {
         self.ref = nil
         self.id = key
+        self.suffix = ""
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.phoneNumber = phoneNumber
+        self.website = ""
+        self.industry = ""
+        self.company = ""
+        self.department = ""
+        self.jobTitle = ""
+        self.workEmail = ""
+        self.workPhoneNumber = ""
+        self.notes = ""
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -37,11 +55,35 @@ struct Person: Identifiable {
 
         self.ref = snapshot.ref
         self.id = snapshot.key
+        self.suffix = value["suffix"] as? String ?? ""
         self.firstName = value["firstName"] as? String ?? ""
         self.lastName = value["lastName"] as? String ?? ""
         self.email = value["email"] as? String ?? ""
         self.phoneNumber = value["phoneNumber"] as? String ?? ""
+        self.website = value["website"] as? String ?? ""
+        self.industry = value["industry"] as? String ?? ""
+        self.company = value["company"] as? String ?? ""
+        self.department = value["department"] as? String ?? ""
+        self.jobTitle = value["jobTitle"] as? String ?? ""
+        self.workEmail = value["workEmail"] as? String ?? ""
+        self.workPhoneNumber = value["workPhoneNumber"] as? String ?? ""
+        self.notes = value["notes"] as? String ?? ""
         self.createdAt = value["createdAt"] as? Int ?? 0
         self.updatedAt = value["updatedAt"] as? Int ?? 0
     }
+    
+    
+//    [
+
+//        "socialProfiles": [
+//            "skype": skype,
+//            "linkedin": linkedin,
+//            "github": github,
+//            "medium": medium,
+//            "twitter": twitter,
+//            "facebook": facebook,
+//            "instagram": instagram
+//        ],
+//        "notes": notes,
+//    ]
 }

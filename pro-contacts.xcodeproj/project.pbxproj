@@ -15,7 +15,6 @@
 		36EFB69623CCD6AA005752D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB69423CCD6AA005752D5 /* LaunchScreen.storyboard */; };
 		36EFB6A123CCD6AA005752D5 /* pro_contactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6A023CCD6AA005752D5 /* pro_contactsTests.swift */; };
 		36EFB6AC23CCD6AA005752D5 /* pro_contactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6AB23CCD6AA005752D5 /* pro_contactsUITests.swift */; };
-		36EFB6BA23CD48F3005752D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */; };
 		36EFB6BC23CD52EB005752D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6BB23CD52EB005752D5 /* User.swift */; };
 		36EFB6BF23CD552D005752D5 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6BE23CD552D005752D5 /* FirebaseSession.swift */; };
 		36EFB6C223CD5EF8005752D5 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6C123CD5EF8005752D5 /* LandingView.swift */; };
@@ -41,6 +40,9 @@
 		36EFB6F823CF4E68005752D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F723CF4E68005752D5 /* MainView.swift */; };
 		36EFB6FA23CF50BC005752D5 /* PersonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6F923CF50BC005752D5 /* PersonFormView.swift */; };
 		36EFB6FC23CF6695005752D5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6FB23CF6695005752D5 /* Person.swift */; };
+		36EFB6FE23D08C24005752D5 /* SuffixOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6FD23D08C24005752D5 /* SuffixOptionsView.swift */; };
+		36EFB70123D09C4B005752D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB70023D09C4B005752D5 /* GoogleService-Info.plist */; };
+		36EFB70323D0A071005752D5 /* IndustryOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70223D0A071005752D5 /* IndustryOptionsView.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -79,7 +81,6 @@
 		36EFB6A723CCD6AA005752D5 /* pro-contactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pro-contactsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EFB6AB23CCD6AA005752D5 /* pro_contactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pro_contactsUITests.swift; sourceTree = "<group>"; };
 		36EFB6AD23CCD6AA005752D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36EFB6BB23CD52EB005752D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		36EFB6BE23CD552D005752D5 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		36EFB6C123CD5EF8005752D5 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -105,6 +106,9 @@
 		36EFB6F723CF4E68005752D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		36EFB6F923CF50BC005752D5 /* PersonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormView.swift; sourceTree = "<group>"; };
 		36EFB6FB23CF6695005752D5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		36EFB6FD23D08C24005752D5 /* SuffixOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixOptionsView.swift; sourceTree = "<group>"; };
+		36EFB70023D09C4B005752D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36EFB70223D0A071005752D5 /* IndustryOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryOptionsView.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,7 +191,7 @@
 				36EFB68F23CCD6AA005752D5 /* Assets.xcassets */,
 				36EFB69423CCD6AA005752D5 /* LaunchScreen.storyboard */,
 				36EFB69723CCD6AA005752D5 /* Info.plist */,
-				36EFB6B923CD48F3005752D5 /* GoogleService-Info.plist */,
+				36EFB70023D09C4B005752D5 /* GoogleService-Info.plist */,
 				36EFB6E623CE0772005752D5 /* Helpers */,
 				36EFB6BD23CD52F7005752D5 /* Models */,
 				36EFB6C023CD5534005752D5 /* Services */,
@@ -245,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				36EFB6C823CD5FBC005752D5 /* Authentication */,
+				36EFB6FF23D08C29005752D5 /* FormViews */,
 				36EFB6C123CD5EF8005752D5 /* LandingView.swift */,
 				36EFB6F723CF4E68005752D5 /* MainView.swift */,
 				36EFB6F523CF4D5C005752D5 /* PersonsView.swift */,
@@ -298,6 +303,15 @@
 				36EFB6ED23CF3FA6005752D5 /* ActivityIndicator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		36EFB6FF23D08C29005752D5 /* FormViews */ = {
+			isa = PBXGroup;
+			children = (
+				36EFB6FD23D08C24005752D5 /* SuffixOptionsView.swift */,
+				36EFB70223D0A071005752D5 /* IndustryOptionsView.swift */,
+			);
+			path = FormViews;
 			sourceTree = "<group>";
 		};
 		78E6D1B015BCD4ECA1B78B2E /* Frameworks */ = {
@@ -423,11 +437,11 @@
 				36EFB6DC23CE072C005752D5 /* NewYorkSmall-HeavyItalic.otf in Resources */,
 				36EFB69623CCD6AA005752D5 /* LaunchScreen.storyboard in Resources */,
 				36EFB6DA23CE072C005752D5 /* NewYorkSmall-BlackItalic.otf in Resources */,
-				36EFB6BA23CD48F3005752D5 /* GoogleService-Info.plist in Resources */,
 				36EFB6E023CE072C005752D5 /* NewYorkSmall-RegularItalic.otf in Resources */,
 				36EFB6D923CE072C005752D5 /* NewYorkSmall-Bold.otf in Resources */,
 				36EFB6DD23CE072C005752D5 /* NewYorkSmall-Black.otf in Resources */,
 				36EFB6DB23CE072C005752D5 /* NewYorkSmall-Medium.otf in Resources */,
+				36EFB70123D09C4B005752D5 /* GoogleService-Info.plist in Resources */,
 				36EFB6E223CE072C005752D5 /* NewYorkSmall-Regular.otf in Resources */,
 				36EFB6DF23CE072C005752D5 /* NewYorkSmall-Semibold.otf in Resources */,
 				36EFB6D823CE072C005752D5 /* NewYorkSmall-BoldItalic.otf in Resources */,
@@ -547,6 +561,8 @@
 				36EFB6C223CD5EF8005752D5 /* LandingView.swift in Sources */,
 				36EFB6F823CF4E68005752D5 /* MainView.swift in Sources */,
 				36EFB6F423CF4D36005752D5 /* PersonDetailView.swift in Sources */,
+				36EFB6FE23D08C24005752D5 /* SuffixOptionsView.swift in Sources */,
+				36EFB70323D0A071005752D5 /* IndustryOptionsView.swift in Sources */,
 				36EFB6F623CF4D5C005752D5 /* PersonsView.swift in Sources */,
 				36EFB6FA23CF50BC005752D5 /* PersonFormView.swift in Sources */,
 				36EFB6BC23CD52EB005752D5 /* User.swift in Sources */,

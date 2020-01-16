@@ -22,4 +22,11 @@ struct Constants {
         static let title = 18.0
         static let body = 16.0
     }
+
+    struct FormOptions {
+        static let suffixes = ["Mr", "Mrs", "Ms", "Engr", "Prof", "Dr"]
+        static let industries = [
+            "Agriculture", "Automotive", "Aerospace", "Electronics", "Software"
+        ]
+    }
 }

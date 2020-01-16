@@ -68,7 +68,7 @@ class FirebaseSession: ObservableObject {
     // MARK: - Professional Contacts (Persons) functions
     func getContacts() {
         databaseRef("contacts", self.uid).observe(DataEventType.value) { (snapshot) in
-            print(snapshot)
+            print(snapshot.childrenCount)
             var items = [Person]()
             self.fetchingContacts = false
 

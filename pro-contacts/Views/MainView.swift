@@ -34,17 +34,16 @@ struct MainView: View {
             }
             .navigationBarTitle(Text("ProContacts"))
             .navigationBarItems(
-                leading: EditButton(),
-                trailing: HStack {
-//                        Button(action: { withAnimation { self.session.logout() } }) {
-//                            Image(systemName: "power")
-//                                .padding()
-//                        }
-                    Button(action: { self.showPersonForm.toggle() }) {
-                        Image(systemName: "plus")
-                            .imageScale(.large)
-                            .padding(.vertical)
-                    }
+                leading: Button(action: { withAnimation { self.session.logout() } }) {
+                    Image(systemName: "power")
+                        .imageScale(.large)
+                        .padding(.vertical)
+                        .foregroundColor(Color("danger"))
+                },
+                trailing: Button(action: { self.showPersonForm.toggle() }) {
+                    Image(systemName: "plus")
+                        .imageScale(.large)
+                        .padding(.vertical)
                 }
             )
         }

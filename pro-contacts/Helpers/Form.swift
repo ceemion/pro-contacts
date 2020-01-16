@@ -9,6 +9,17 @@
 import Foundation
 import SwiftUI
 
+public struct Section: View {
+    let text: String
+
+    public var body: some View {
+        Text(text)
+            .font(Font.custom(Constants.Font.title, size: 14))
+            .foregroundColor(Color("text"))
+            .padding(.vertical)
+    }
+}
+
 public struct Label: View {
     let text: String
 
