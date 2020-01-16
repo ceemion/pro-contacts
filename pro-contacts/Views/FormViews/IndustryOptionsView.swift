@@ -29,6 +29,7 @@ struct IndustryOptionsView: View {
                 self.presentationMode.wrappedValue.dismiss()
             }) { Image(systemName: "xmark")
                 .imageScale(.medium)
+                .padding(.vertical)
             }
                 .accentColor(Color("primary"))
             )

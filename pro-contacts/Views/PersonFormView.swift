@@ -55,6 +55,9 @@ struct PersonFormView: View {
                                 self.suffixSelect.toggle()
                         }
                     }
+                    .sheet(isPresented: $suffixSelect) {
+                        SuffixOptionsView(suffix: self.$suffix)
+                    }
 
                     VStack(alignment: .leading, spacing: 5) {
                         Label(text: "First Name")
@@ -106,6 +109,9 @@ struct PersonFormView: View {
                             .onTapGesture {
                                 self.industrySelect.toggle()
                         }
+                    }
+                    .sheet(isPresented: $industrySelect) {
+                        IndustryOptionsView(industry: self.$industry)
                     }
 
                     VStack(alignment: .leading, spacing: 5) {
@@ -245,12 +251,6 @@ struct PersonFormView: View {
                     .disabled(self.isFormInvalid())
                     .accentColor(Color("primary"))
                 )
-            .sheet(isPresented: $suffixSelect) {
-                SuffixOptionsView(suffix: self.$suffix)
-            }
-            .sheet(isPresented: $industrySelect) {
-                IndustryOptionsView(industry: self.$industry)
-            }
         }
     }
 
