@@ -274,15 +274,13 @@ struct PersonFormView: View {
             "jobTitle": jobTitle,
             "workEmail": workEmail,
             "workPhoneNumber": workPhoneNumber,
-            "socialProfiles": [
-                "skype": skype,
-                "linkedin": linkedin,
-                "github": github,
-                "medium": medium,
-                "twitter": twitter,
-                "facebook": facebook,
-                "instagram": instagram
-            ],
+            "skype": skype,
+            "linkedin": linkedin,
+            "github": github,
+            "medium": medium,
+            "twitter": twitter,
+            "facebook": facebook,
+            "instagram": instagram,
             "notes": notes,
             "createdAt": timestamp,
             "updatedAt": timestamp

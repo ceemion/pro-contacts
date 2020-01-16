@@ -12,18 +12,25 @@ import FirebaseDatabase
 struct Person: Identifiable {
     let id: String
     let ref: DatabaseReference?
-    let suffix: String?
+    let suffix: String
     let firstName: String
     let lastName: String
     let email: String
     let phoneNumber: String
-    let website: String?
+    let website: String
     let industry: String
-    let company: String?
-    let department: String?
+    let company: String
+    let department: String
     let jobTitle: String
-    let workEmail: String?
-    let workPhoneNumber: String?
+    let workEmail: String
+    let workPhoneNumber: String
+    let skype: String
+    let linkedin: String
+    let github: String
+    let medium: String
+    let twitter: String
+    let facebook: String
+    let instagram: String
     let notes: String
     let createdAt: Int
     let updatedAt: Int
@@ -43,6 +50,13 @@ struct Person: Identifiable {
         self.jobTitle = ""
         self.workEmail = ""
         self.workPhoneNumber = ""
+        self.skype = ""
+        self.linkedin = ""
+        self.github = ""
+        self.medium = ""
+        self.twitter = ""
+        self.facebook = ""
+        self.instagram = ""
         self.notes = ""
         self.createdAt = createdAt
         self.updatedAt = updatedAt
@@ -67,23 +81,15 @@ struct Person: Identifiable {
         self.jobTitle = value["jobTitle"] as? String ?? ""
         self.workEmail = value["workEmail"] as? String ?? ""
         self.workPhoneNumber = value["workPhoneNumber"] as? String ?? ""
+        self.skype = value["skype"] as? String ?? ""
+        self.linkedin = value["linkedin"] as? String ?? ""
+        self.github = value["github"] as? String ?? ""
+        self.medium = value["medium"] as? String ?? ""
+        self.twitter = value["twitter"] as? String ?? ""
+        self.facebook = value["facebook"] as? String ?? ""
+        self.instagram = value["instagram"] as? String ?? ""
         self.notes = value["notes"] as? String ?? ""
         self.createdAt = value["createdAt"] as? Int ?? 0
         self.updatedAt = value["updatedAt"] as? Int ?? 0
     }
-    
-    
-//    [
-
-//        "socialProfiles": [
-//            "skype": skype,
-//            "linkedin": linkedin,
-//            "github": github,
-//            "medium": medium,
-//            "twitter": twitter,
-//            "facebook": facebook,
-//            "instagram": instagram
-//        ],
-//        "notes": notes,
-//    ]
 }
