@@ -43,6 +43,8 @@
 		36EFB6FE23D08C24005752D5 /* SuffixOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB6FD23D08C24005752D5 /* SuffixOptionsView.swift */; };
 		36EFB70323D0A071005752D5 /* IndustryOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70223D0A071005752D5 /* IndustryOptionsView.swift */; };
 		36EFB70523D0AF23005752D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36EFB70423D0AF23005752D5 /* GoogleService-Info.plist */; };
+		36EFB70723D36677005752D5 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70623D36677005752D5 /* KeyboardGuardian.swift */; };
+		36EFB70923D36824005752D5 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70823D36824005752D5 /* GeometryGetter.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -109,6 +111,8 @@
 		36EFB6FD23D08C24005752D5 /* SuffixOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixOptionsView.swift; sourceTree = "<group>"; };
 		36EFB70223D0A071005752D5 /* IndustryOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryOptionsView.swift; sourceTree = "<group>"; };
 		36EFB70423D0AF23005752D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36EFB70623D36677005752D5 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
+		36EFB70823D36824005752D5 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +305,8 @@
 				36EFB6E723CE07BE005752D5 /* Constants.swift */,
 				36EFB6EB23CE0BC6005752D5 /* Form.swift */,
 				36EFB6ED23CF3FA6005752D5 /* ActivityIndicator.swift */,
+				36EFB70623D36677005752D5 /* KeyboardGuardian.swift */,
+				36EFB70823D36824005752D5 /* GeometryGetter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 			files = (
 				36EFB6C223CD5EF8005752D5 /* LandingView.swift in Sources */,
 				36EFB6F823CF4E68005752D5 /* MainView.swift in Sources */,
+				36EFB70723D36677005752D5 /* KeyboardGuardian.swift in Sources */,
 				36EFB6F423CF4D36005752D5 /* PersonDetailView.swift in Sources */,
 				36EFB6FE23D08C24005752D5 /* SuffixOptionsView.swift in Sources */,
 				36EFB70323D0A071005752D5 /* IndustryOptionsView.swift in Sources */,
@@ -571,6 +578,7 @@
 				36EFB68C23CCD6A8005752D5 /* SceneDelegate.swift in Sources */,
 				36EFB6EE23CF3FA6005752D5 /* ActivityIndicator.swift in Sources */,
 				36EFB68E23CCD6A8005752D5 /* ContentView.swift in Sources */,
+				36EFB70923D36824005752D5 /* GeometryGetter.swift in Sources */,
 				36EFB6C723CD5FA4005752D5 /* LoginView.swift in Sources */,
 				36EFB6EC23CE0BC6005752D5 /* Form.swift in Sources */,
 				36EFB6BF23CD552D005752D5 /* FirebaseSession.swift in Sources */,

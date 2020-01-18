@@ -261,7 +261,7 @@ struct PersonFormView: View {
                 let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
                 let height = value.height
 
-                self.keyboardHeight = height - 50
+                self.keyboardHeight = (height/2) // - 50
             }
 
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (notification) in

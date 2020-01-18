@@ -41,7 +41,7 @@ struct MainView: View {
                         .foregroundColor(Color("danger"))
                 },
                 trailing: Button(action: { self.showPersonForm.toggle() }) {
-                    Image(systemName: "plus")
+                    Image(systemName: "person.badge.plus")
                         .imageScale(.large)
                         .padding(.vertical)
                 }
