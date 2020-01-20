@@ -19,8 +19,31 @@ struct PersonDetailView: View {
     var person: Person
 
     var body: some View {
-            Text(person.lastName)
-                .navigationBarTitle(Text("\(person.firstName) \(person.lastName)"))
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack(spacing: 20) {
+                ZStack(alignment: .center) {
+                    Circle()
+                        .fill(Color("gray"))
+                        .frame(width: 100, height: 100, alignment: .center)
+                    Text("JA")
+                        .font(Font.custom("HelveticaNeue-Medium", size: 40))
+                        .foregroundColor(Color.white)
+                }
+
+                Text("\(person.suffix) \(person.firstName) \(person.lastName)")
+
+                HStack(alignment: .center, spacing: 10) {
+                    Image(systemName: "mappin")
+                    Text(person.country)
+                }
+            }
+        }
+//        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarItems(
+            trailing: NavigationLink(destination: PersonFormView(), label: {
+                Text("Edit")
+            })
+        )
     }
 }
 

@@ -17,6 +17,7 @@ class FirebaseSession: ObservableObject {
 
     @Published var fetchingContacts: Bool = true
     @Published var contacts = [Person]()
+    @Published var countries = [Country]()
 
     var uid: String = Auth.auth().currentUser?.uid ?? ""
 
@@ -87,6 +88,17 @@ class FirebaseSession: ObservableObject {
         let date = Int(Date.timeIntervalSinceReferenceDate * 1000)
         databaseRef("contacts", self.uid).child(String(date)).setValue(payload) { (error: Error?, ref: DatabaseReference) in
             handler(ref, error)
+        }
+    }
+
+    // MARK: - Other functions
+    func getCountries() {
+        Database.database().reference(withPath: "countries").observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot {
+                    self.countries.append(Country.init(snapshot: snapshot)!)
+                }
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ struct PersonFormView: View {
     @State private var email: String = "jt@email.com"
     @State private var phoneNumber: String = "1234567"
     @State private var website: String = ""
+    @State private var country: String = ""
 
     @State private var industry: String = ""
     @State private var company: String = "Tesla"
@@ -41,6 +42,7 @@ struct PersonFormView: View {
     @State private var loading: Bool = false
 
     @State private var suffixSelect: Bool = false
+    @State private var countrySelect: Bool = false
     @State private var industrySelect: Bool = false
 
     var body: some View {
@@ -97,6 +99,22 @@ struct PersonFormView: View {
                         TextField("", text: $website)
                             .textFieldStyle(ProTextFieldStyle())
                             .autocapitalization(.none)
+                    }
+
+                    VStack(alignment: .leading, spacing: 5) {
+                        Label(text: "Country")
+                        TextField("Select", text: $country)
+                            .textFieldStyle(ProTextFieldStyle())
+                            .disabled(true)
+                            .onTapGesture {
+                                self.countrySelect.toggle()
+                        }
+                    }
+                    .sheet(isPresented: $countrySelect) {
+                        CountryOptionsView(
+                            countries: self.session.countries,
+                            country: self.$country
+                        )
                     }
                 }
                 .padding(.horizontal, 10)
@@ -257,6 +275,7 @@ struct PersonFormView: View {
         .offset(y: -self.keyboardHeight)
         .animation(.spring())
         .onAppear() {
+            self.session.getCountries()
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
                 let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
                 let height = value.height
@@ -284,6 +303,7 @@ struct PersonFormView: View {
             "email": email,
             "phoneNumber": phoneNumber,
             "website": website,
+            "country": country,
             "industry": industry,
             "company": company,
             "department": department,

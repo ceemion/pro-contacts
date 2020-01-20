@@ -18,6 +18,7 @@ struct Person: Identifiable {
     let email: String
     let phoneNumber: String
     let website: String
+    let country: String
     let industry: String
     let company: String
     let department: String
@@ -44,6 +45,7 @@ struct Person: Identifiable {
         self.email = email
         self.phoneNumber = phoneNumber
         self.website = ""
+        self.country = ""
         self.industry = ""
         self.company = ""
         self.department = ""
@@ -75,6 +77,7 @@ struct Person: Identifiable {
         self.email = value["email"] as? String ?? ""
         self.phoneNumber = value["phoneNumber"] as? String ?? ""
         self.website = value["website"] as? String ?? ""
+        self.country = value["country"] as? String ?? ""
         self.industry = value["industry"] as? String ?? ""
         self.company = value["company"] as? String ?? ""
         self.department = value["department"] as? String ?? ""
