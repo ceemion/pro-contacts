@@ -146,10 +146,10 @@ struct PersonDetailView: View {
             }
             .padding()
         }
-        .navigationBarItems(
-            trailing: NavigationLink(destination: PersonFormView(), label: {
-                Text("Edit")
-            })
+//        .navigationBarItems(
+//            trailing: NavigationLink(destination: PersonFormView(), label: {
+//                Text("Edit")
+//            })
         )
     }
 }
