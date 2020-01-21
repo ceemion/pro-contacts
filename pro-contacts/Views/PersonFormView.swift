@@ -202,7 +202,7 @@ struct PersonFormView: View {
                     }
 
                     HStack {
-                        Image("medium-monogram")
+                        Image("medium")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
@@ -222,7 +222,7 @@ struct PersonFormView: View {
                     }
 
                     HStack {
-                        Image("facebook-old")
+                        Image("facebook")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 25, height: 25)
