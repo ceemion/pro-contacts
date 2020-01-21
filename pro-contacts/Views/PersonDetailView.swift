@@ -150,7 +150,7 @@ struct PersonDetailView: View {
 //            trailing: NavigationLink(destination: PersonFormView(), label: {
 //                Text("Edit")
 //            })
-        )
+//        )
     }
 }
 
