@@ -47,6 +47,7 @@
 		36EFB70923D36824005752D5 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70823D36824005752D5 /* GeometryGetter.swift */; };
 		36EFB70B23D5B3BD005752D5 /* CountryOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70A23D5B3BD005752D5 /* CountryOptionsView.swift */; };
 		36EFB70D23D5C44E005752D5 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70C23D5C44E005752D5 /* Country.swift */; };
+		36EFB70F23D63236005752D5 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB70E23D63236005752D5 /* Functions.swift */; };
 		5E15FC4B7BE6B7FAB7437CB7 /* Pods_pro_contactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758DFA2CA34CD4F72522B360 /* Pods_pro_contactsUITests.framework */; };
 		618D1BBEE6D3120F848E4985 /* Pods_pro_contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */; };
 		7D144C9C875D67B8130B4639 /* Pods_pro_contactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */; };
@@ -117,6 +118,7 @@
 		36EFB70823D36824005752D5 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 		36EFB70A23D5B3BD005752D5 /* CountryOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryOptionsView.swift; sourceTree = "<group>"; };
 		36EFB70C23D5C44E005752D5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		36EFB70E23D63236005752D5 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		46180F742EDEB03C22918550 /* Pods-pro-contactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contactsTests.debug.xcconfig"; path = "Target Support Files/Pods-pro-contactsTests/Pods-pro-contactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4799D724B0C5BA5CE23C3A4F /* Pods_pro_contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC7DB0D1DEA79DA9406DC88 /* Pods_pro_contactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pro_contactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +314,7 @@
 				36EFB6ED23CF3FA6005752D5 /* ActivityIndicator.swift */,
 				36EFB70623D36677005752D5 /* KeyboardGuardian.swift */,
 				36EFB70823D36824005752D5 /* GeometryGetter.swift */,
+				36EFB70E23D63236005752D5 /* Functions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				36EFB68A23CCD6A8005752D5 /* AppDelegate.swift in Sources */,
 				36EFB6C523CD5F90005752D5 /* RegisterView.swift in Sources */,
 				36EFB68C23CCD6A8005752D5 /* SceneDelegate.swift in Sources */,
+				36EFB70F23D63236005752D5 /* Functions.swift in Sources */,
 				36EFB6EE23CF3FA6005752D5 /* ActivityIndicator.swift in Sources */,
 				36EFB68E23CCD6A8005752D5 /* ContentView.swift in Sources */,
 				36EFB70B23D5B3BD005752D5 /* CountryOptionsView.swift in Sources */,
