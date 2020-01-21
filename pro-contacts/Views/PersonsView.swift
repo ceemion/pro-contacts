@@ -29,7 +29,7 @@ struct PersonsView: View {
                             .padding(10)
                             .background(
                                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .fill(Color("rowsBg")))
+                                    .fill(Color("rows.bg")))
                     }
                 }
             }

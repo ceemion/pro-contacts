@@ -27,12 +27,25 @@ class Functions {
     }
 
     func openSocialUrl(_ t: String, _ u: String) {
-        var mapped = u
+        var mapped = ""
 
-        if t == "skype" {
+        switch t {
+        case "skype":
             mapped = "live:\(u)"
-        } else if t == "linkedin" {
+        case "linkedin":
             mapped = "https://www.linkedin.com/in/\(u)"
+        case "facebook":
+            mapped = "https://www.facebook.com/\(u)"
+        case "twitter":
+            mapped = "https://twitter.com/\(u)"
+        case "medium":
+            mapped = "https://medium.com/@\(u)"
+        case "github":
+            mapped = "https://github.com/\(u)"
+        case "instagram":
+            mapped = "https://www.instagram.com/\(u)"
+        default:
+            mapped = "\(t):\(u)"
         }
 
         if let url = URL(string: mapped) {

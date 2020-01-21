@@ -37,7 +37,7 @@ public struct ProTextFieldStyle : TextFieldStyle {
             .font(Font.custom(Constants.Font.main, size: 14))
             .foregroundColor(Color("text"))
             .padding()
-            .background(Color("inputBg"))
+            .background(Color("input.bg"))
             .cornerRadius(10)
     }
 }

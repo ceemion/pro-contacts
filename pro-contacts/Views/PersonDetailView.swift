@@ -59,7 +59,7 @@ struct PersonDetailView: View {
                 HStack(alignment: .center, spacing: 30) {
                     Button(action: { Functions().phoneCallAction(self.person.phoneNumber) }) {
                         VStack(alignment: .center, spacing: 10) {
-                            Image(systemName: "phone.circle.fill")
+                            Image(systemName: "phone.fill.arrow.up.right")
                                 .imageScale(.large)
                                 .accessibility(label: Text("Call"))
                         }
@@ -81,7 +81,7 @@ struct PersonDetailView: View {
                         }
                     }
                     VStack(alignment: .center, spacing: 5) {
-                        Image("whatsapp")
+                        Image("whatsapp.dk")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
@@ -184,10 +184,17 @@ struct SocialRow: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 20, height: 20, alignment: .center)
-                    Text(content)
+                    Text("instagram medium twitter".contains(type) ? "@\(content)" : content)
                         .font(Font.custom(Constants.Font.main, size: 14))
                         .foregroundColor(Color("social.\(type)"))
                     Spacer()
+                    Group {
+                        if type != "skype" {
+                            Image(systemName: "arrow.up.right")
+                                .imageScale(.large)
+                                .foregroundColor(Color("gray"))
+                        }
+                    }
                 }
                 .padding(10)
                 .onTapGesture {
