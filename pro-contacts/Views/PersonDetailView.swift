@@ -23,7 +23,7 @@ struct PersonDetailView: View {
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
-            VStack(spacing: 20) {
+            VStack(alignment: .center, spacing: 20) {
                 ZStack(alignment: .center) {
                     Circle()
                         .fill(Color("gray"))
@@ -37,11 +37,24 @@ struct PersonDetailView: View {
                 }
 
                 Text("\(person.suffix) \(person.firstName) \(person.lastName)")
+                    .font(Font.custom(Constants.Font.titleMed, size: 18))
+                    .foregroundColor(Color("text"))
 
                 HStack(alignment: .center, spacing: 10) {
                     Image(systemName: "mappin")
+                        .imageScale(.medium)
                     Text(person.country)
+                        .font(Font.custom(Constants.Font.main, size: 16))
+                        .foregroundColor(Color("text"))
                 }
+
+                VStack {
+                    Text(person.jobTitle)
+                    Text(person.department)
+                    Text(person.company)
+                }
+                .font(Font.custom(Constants.Font.main, size: 14))
+                .foregroundColor(Color("gray"))
 
                 HStack(alignment: .center, spacing: 30) {
                     Button(action: { Functions().phoneCallAction(self.person.phoneNumber) }) {
@@ -49,8 +62,6 @@ struct PersonDetailView: View {
                             Image(systemName: "phone.circle.fill")
                                 .imageScale(.large)
                                 .accessibility(label: Text("Call"))
-                            Text("call")
-                                .font(Font.custom(Constants.Font.main, size: 12))
                         }
                     }
                     Button(action: { self.openMail.toggle() }) {
@@ -58,8 +69,6 @@ struct PersonDetailView: View {
                             Image(systemName: "envelope.fill")
                                 .imageScale(.large)
                                 .accessibility(label: Text("Email"))
-                            Text("mail")
-                                .font(Font.custom(Constants.Font.main, size: 12))
                         }
                         .alert(isPresented: self.$openMail) {
                             Alert(
@@ -79,9 +88,6 @@ struct PersonDetailView: View {
                             .onTapGesture {
                                 self.openWhatsapp.toggle()
                         }
-                        Text("whatsapp")
-                            .font(Font.custom(Constants.Font.main, size: 12))
-                            .foregroundColor(Color("text"))
                     }
                     .alert(isPresented: self.$openWhatsapp) {
                         Alert(
@@ -94,13 +100,101 @@ struct PersonDetailView: View {
                     }
                 }
                 .accentColor(Color("text"))
+
+                HStack {
+                    Spacer()
+                }.padding(0)
             }
+
+            VStack(alignment: .leading, spacing: 20) {
+                HStack {
+                    Spacer()
+                }
+
+                TextRow(label: "Phone", content: person.phoneNumber)
+                TextRow(label: "Email", content: person.email)
+                TextRow(label: "Website", content: person.website)
+
+                Text("Work")
+                    .font(Font.custom(Constants.Font.title, size: 14))
+                    .foregroundColor(Color("text"))
+                    .padding(.top, 10)
+                Group {
+                    TextRow(label: "Job Title", content: person.jobTitle)
+                    TextRow(label: "Department", content: person.department)
+                    TextRow(label: "Company", content: person.company)
+                    TextRow(label: "Industry", content: person.industry)
+                    TextRow(label: "Work Mail", content: person.workEmail)
+                    TextRow(label: "Work Phone", content: person.workPhoneNumber)
+                }.padding(.leading, 10)
+
+                Text("Social Profiles")
+                    .font(Font.custom(Constants.Font.title, size: 14))
+                    .foregroundColor(Color("text"))
+                    .padding(.top, 10)
+                Group {
+                    SocialRow(type: "skype", content: person.skype)
+                    SocialRow(type: "linkedin", content: person.linkedin)
+                    SocialRow(type: "github", content: person.github)
+                    SocialRow(type: "medium", content: person.medium)
+                    SocialRow(type: "twitter", content: person.twitter)
+                    SocialRow(type: "facebook", content: person.facebook)
+                    SocialRow(type: "instagram", content: person.instagram)
+                }.padding(.horizontal, 10)
+
+                TextRow(label: "Notes", content: person.notes)
+            }
+            .padding()
         }
         .navigationBarItems(
             trailing: NavigationLink(destination: PersonFormView(), label: {
                 Text("Edit")
             })
         )
+    }
+}
+
+struct TextRow: View {
+    var label: String
+    var content: String
+
+    var body: some View {
+        Group {
+            if !content.isEmpty {
+                VStack(alignment: .leading, spacing: 5) {
+                    Label(text: label)
+                    Text(content)
+                        .font(Font.custom(Constants.Font.main, size: 16))
+                        .foregroundColor(Color("text"))
+                }
+            }
+        }
+    }
+}
+
+struct SocialRow: View {
+    var type: String
+    var content: String
+
+    var body: some View {
+        Group {
+            if !content.isEmpty {
+                HStack(alignment: .center, spacing: 5) {
+                    Image(type)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20, alignment: .center)
+                    Text(content)
+                        .font(Font.custom(Constants.Font.main, size: 14))
+                        .foregroundColor(Color("social.\(type)"))
+                    Spacer()
+                }
+                .padding(10)
+                .onTapGesture {
+                    Functions().openSocialUrl(self.type, self.content)
+                }
+            }
+        }
     }
 }
 

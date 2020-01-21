@@ -25,4 +25,20 @@ class Functions {
             }
         }
     }
+
+    func openSocialUrl(_ t: String, _ u: String) {
+        var mapped = u
+
+        if t == "skype" {
+            mapped = "live:\(u)"
+        } else if t == "linkedin" {
+            mapped = "https://www.linkedin.com/in/\(u)"
+        }
+
+        if let url = URL(string: mapped) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
+    }
 }
