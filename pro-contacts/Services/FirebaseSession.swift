@@ -91,6 +91,10 @@ class FirebaseSession: ObservableObject {
         }
     }
 
+    func deleteContact(id: String) {
+        databaseRef("contacts", self.uid).child(id).removeValue()
+    }
+
     // MARK: - Other functions
     func getCountries() {
         Database.database().reference(withPath: "countries").observeSingleEvent(of: DataEventType.value) { (snapshot) in

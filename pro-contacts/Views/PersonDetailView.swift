@@ -18,8 +18,11 @@ private let dateFormatter: DateFormatter = {
 struct PersonDetailView: View {
     var person: Person
 
+    @EnvironmentObject var session: FirebaseSession
+
     @State private var openMail: Bool = false
     @State private var openWhatsapp: Bool = false
+    @State private var confirmDelete: Bool = false
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -144,6 +147,31 @@ struct PersonDetailView: View {
 
                 TextRow(label: "Notes", content: person.notes)
             }
+            .padding()
+
+            Button(action: {
+                self.confirmDelete.toggle()
+            }) {
+                HStack(alignment: .center, spacing: 10) {
+                    Spacer()
+                    Text("Delete Contact")
+                    Spacer()
+                }
+                .alert(isPresented: self.$confirmDelete) {
+                    Alert(
+                        title: Text("Delete Contact"),
+                        message: Text("Permanently delete \(self.person.firstName) \(self.person.lastName) from your professional contacts?"),
+                        primaryButton: .destructive(Text("Delete Now")) {
+                            self.session.deleteContact(id: self.person.id)
+                        },
+                        secondaryButton: .cancel())
+                }
+            }
+            .font(Font.custom(Constants.Font.title, size: 16))
+            .foregroundColor(Color("danger"))
+            .padding()
+            .background(Color("danger").opacity(0.05))
+            .cornerRadius(10)
             .padding()
         }
 //        .navigationBarItems(
