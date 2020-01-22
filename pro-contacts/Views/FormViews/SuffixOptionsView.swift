@@ -24,7 +24,7 @@ struct SuffixOptionsView: View {
                         }
                 }
             }
-            .navigationBarTitle("Select Suffix", displayMode: .inline)
+            .navigationBarTitle("Select Title", displayMode: .inline)
             .navigationBarItems(leading: Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) { Image(systemName: "xmark")

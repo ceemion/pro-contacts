@@ -51,7 +51,7 @@ struct PersonFormView: View {
                 Section(text: "Personal Information")
                 VStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 5) {
-                        Label(text: "Suffix")
+                        Label(text: "Title")
                         TextField("Select", text: $suffix)
                             .textFieldStyle(ProTextFieldStyle())
                             .disabled(true)
