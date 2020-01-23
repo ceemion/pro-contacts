@@ -45,16 +45,38 @@ struct RowView: View {
     let person: Person
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("\(person.firstName) \(person.lastName)")
-                .foregroundColor(Color("text"))
-                .font(Font.custom(Constants.Font.main, size: CGFloat(Constants.TextSizes.body)))
+        HStack(alignment: .center, spacing: 5) {
+            Avatar(person: person)
 
-            HStack {
-                Spacer()
-            }.padding(2)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("\(person.firstName) \(person.lastName)")
+                    .foregroundColor(Color("text"))
+                    .font(Font.custom(Constants.Font.main, size: CGFloat(Constants.TextSizes.body)))
 
-            SubRow(person: person)
+                HStack {
+                    Spacer()
+                }.padding(2)
+
+                SubRow(person: person)
+            }
+        }
+    }
+}
+
+struct Avatar: View {
+    let person: Person
+
+    var body: some View {
+        ZStack(alignment: .center) {
+            Circle()
+                .fill(Color("gray"))
+                .frame(width: 40, height: 40, alignment: .center)
+            HStack(spacing: 0) {
+                Text(person.firstName.prefix(1).uppercased())
+                Text(person.lastName.prefix(1).uppercased())
+            }
+            .font(Font.custom("HelveticaNeue-Medium", size: 16))
+            .foregroundColor(Color.white)
         }
     }
 }

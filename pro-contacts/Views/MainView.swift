@@ -56,8 +56,8 @@ struct MainView: View {
         }
         .alert(isPresented: self.$confirmLogout) {
             Alert(
-                title: Text("Logout?"),
-                message: Text("Delete session and logout."),
+                title: Text("Log Out"),
+                message: Text("Do you want to logout now?."),
                 primaryButton: .destructive(Text("Yes")) {
                     self.session.logout()
                 },
