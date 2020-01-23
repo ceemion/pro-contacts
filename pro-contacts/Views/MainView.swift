@@ -12,6 +12,7 @@ struct MainView: View {
     @EnvironmentObject var session: FirebaseSession
 
     @State private var showPersonForm: Bool = false
+    @State private var confirmLogout: Bool = false
 
     var body: some View {
         NavigationView {
@@ -34,7 +35,7 @@ struct MainView: View {
             }
             .navigationBarTitle(Text("ProContacts"))
             .navigationBarItems(
-                leading: Button(action: { withAnimation { self.session.logout() } }) {
+                leading: Button(action: { withAnimation { self.confirmLogout.toggle() } }) {
                     Image(systemName: "power")
                         .imageScale(.large)
                         .padding(.vertical)
@@ -52,6 +53,15 @@ struct MainView: View {
         .sheet(isPresented: $showPersonForm) {
             PersonFormView()
                 .environmentObject(FirebaseSession())
+        }
+        .alert(isPresented: self.$confirmLogout) {
+            Alert(
+                title: Text("Logout?"),
+                message: Text("Delete session and logout."),
+                primaryButton: .destructive(Text("Yes")) {
+                    self.session.logout()
+                },
+                secondaryButton: .cancel())
         }
     }
 }
