@@ -47,14 +47,31 @@ struct RowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("\(person.firstName) \(person.lastName)")
-                .accentColor(Color("text"))
+                .foregroundColor(Color("text"))
+                .font(Font.custom(Constants.Font.main, size: CGFloat(Constants.TextSizes.body)))
+
             HStack {
                 Spacer()
-            }
-            Text(person.email)
-                .accentColor(Color("text").opacity(0.5))
+            }.padding(2)
+
+            SubRow(person: person)
         }
-        .font(Font.custom(Constants.Font.main, size: CGFloat(Constants.TextSizes.body)))
+    }
+}
+
+struct SubRow: View {
+    let person: Person
+
+    var body: some View {
+        Group {
+            if person.company.isEmpty {
+                Text(person.jobTitle)
+            } else {
+                Text("\(person.jobTitle), \(person.company)")
+            }
+        }
+        .foregroundColor(Color("text").opacity(0.5))
+        .font(Font.custom(Constants.Font.main, size: 10))
     }
 }
 

@@ -83,10 +83,16 @@ class FirebaseSession: ObservableObject {
         }
     }
 
-    func postContact(payload: Dictionary<String, Any>, handler: @escaping (DatabaseReference, Error?) -> ()) {
+    func createContact(payload: Dictionary<String, Any>, handler: @escaping (DatabaseReference, Error?) -> ()) {
         // Generates number going up as time goes on, sets order of contacts by how old they are.
         let date = Int(Date.timeIntervalSinceReferenceDate * 1000)
         databaseRef("contacts", self.uid).child(String(date)).setValue(payload) { (error: Error?, ref: DatabaseReference) in
+            handler(ref, error)
+        }
+    }
+
+    func updateContact(id: String, payload: Dictionary<String, Any>, handler: @escaping (DatabaseReference, Error?) -> ()) {
+        databaseRef("contacts", self.uid).child(id).updateChildValues(payload) { (error: Error?, ref: DatabaseReference) in
             handler(ref, error)
         }
     }

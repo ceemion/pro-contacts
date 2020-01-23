@@ -51,7 +51,7 @@ struct MainView: View {
         .accentColor(Color("primary"))
         .navigationViewStyle(DoubleColumnNavigationViewStyle())
         .sheet(isPresented: $showPersonForm) {
-            PersonFormView()
+            PersonFormView(person: Person.init(firstName: "", lastName: "", email: "", phoneNumber: "", createdAt: 0, updatedAt: 0))
                 .environmentObject(FirebaseSession())
         }
         .alert(isPresented: self.$confirmLogout) {

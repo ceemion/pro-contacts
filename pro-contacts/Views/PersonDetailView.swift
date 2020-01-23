@@ -20,6 +20,7 @@ struct PersonDetailView: View {
 
     @EnvironmentObject var session: FirebaseSession
 
+    @State private var openEditForm: Bool = false
     @State private var openMail: Bool = false
     @State private var openWhatsapp: Bool = false
     @State private var confirmDelete: Bool = false
@@ -167,18 +168,22 @@ struct PersonDetailView: View {
                         secondaryButton: .cancel())
                 }
             }
-            .font(Font.custom(Constants.Font.title, size: 16))
+            .font(Font.custom(Constants.Font.main, size: 14))
             .foregroundColor(Color("danger"))
             .padding()
             .background(Color("danger").opacity(0.05))
             .cornerRadius(10)
             .padding()
         }
-//        .navigationBarItems(
-//            trailing: NavigationLink(destination: PersonFormView(), label: {
-//                Text("Edit")
-//            })
-//        )
+        .navigationBarItems(
+            trailing: Button(action: { self.openEditForm.toggle() }) {
+                Text("Edit")
+            }
+        )
+        .sheet(isPresented: $openEditForm, content: {
+            PersonFormView(person: self.person)
+                .environmentObject(FirebaseSession())
+        })
     }
 }
 

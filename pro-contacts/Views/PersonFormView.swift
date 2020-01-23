@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct PersonFormView: View {
+    var person: Person
+
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var session: FirebaseSession
 
@@ -253,7 +255,7 @@ struct PersonFormView: View {
                 }
                 .padding(.horizontal, 10)
             }
-            .navigationBarTitle("New Professional Contact", displayMode: .inline)
+            .navigationBarTitle(self.person.id.isEmpty ? "New Professional Contact" : "Update Contact", displayMode: .inline)
             .navigationBarItems(
                 leading: Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
@@ -265,7 +267,7 @@ struct PersonFormView: View {
                     if loading {
                         ActivityIndicator(shouldAnimate: self.$loading)
                     } else {
-                        Text("Save")
+                        Text("Done")
                     }
                 }
                     .disabled(self.isFormInvalid())
@@ -275,6 +277,29 @@ struct PersonFormView: View {
         .offset(y: -self.keyboardHeight)
         .animation(.spring())
         .onAppear() {
+            // On edit, prefill existing person data
+            self.suffix = self.person.suffix
+            self.firstName = self.person.firstName
+            self.lastName = self.person.lastName
+            self.email = self.person.email
+            self.phoneNumber = self.person.phoneNumber
+            self.website = self.person.website
+            self.country = self.person.country
+            self.industry = self.person.industry
+            self.company = self.person.company
+            self.department = self.person.department
+            self.jobTitle = self.person.jobTitle
+            self.workEmail = self.person.workEmail
+            self.workPhoneNumber = self.person.workPhoneNumber
+            self.skype = self.person.skype
+            self.linkedin = self.person.linkedin
+            self.github = self.person.github
+            self.medium = self.person.medium
+            self.twitter = self.person.twitter
+            self.facebook = self.person.facebook
+            self.instagram = self.person.instagram
+            self.notes = self.person.notes
+
             self.session.getCountries()
             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (notification) in
                 let value = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
@@ -318,7 +343,7 @@ struct PersonFormView: View {
             "facebook": facebook,
             "instagram": instagram,
             "notes": notes,
-            "createdAt": timestamp,
+            "createdAt": self.person.createdAt > 0 ? self.person.createdAt : timestamp,
             "updatedAt": timestamp
         ]
     }
@@ -326,17 +351,26 @@ struct PersonFormView: View {
     func saveContact() {
         self.loading = true
 
-        self.session.postContact(payload: buildPayload()) { (result, error) in
-            print("REsult: ", result)
-            print("ERRor: ", error ?? "no contact post Errors.")
-            self.loading = false
-            self.presentationMode.wrappedValue.dismiss()
+        if self.person.id.isEmpty {
+            self.session.createContact(payload: buildPayload()) { (result, error) in
+                print("REsult: ", result)
+                print("ERRor: ", error ?? "no contact post Errors.")
+                self.loading = false
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        } else {
+            self.session.updateContact(id: self.person.id, payload: buildPayload()) { (result, error) in
+                print("Update REsult: ", result)
+                print("Update ERRor: ", error ?? "no contact update Errors.")
+                self.loading = false
+                self.presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }
 
 struct PersonFormView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonFormView()
+        PersonFormView(person: Person.init(firstName: "", lastName: "", email: "", phoneNumber: "", createdAt: 0, updatedAt: 0))
     }
 }
