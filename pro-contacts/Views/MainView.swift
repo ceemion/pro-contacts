@@ -18,7 +18,11 @@ struct MainView: View {
         NavigationView {
             Group {
                 if self.session.fetchingContacts {
-                    ActivityIndicator(shouldAnimate: self.$session.fetchingContacts)
+                    VStack(alignment: .center, spacing: 5) {
+                        ActivityIndicator(shouldAnimate: self.$session.fetchingContacts)
+                        Text("Loading")
+                            .font(.footnote)
+                    }
                 } else {
                     if self.session.contacts.isEmpty {
                         VStack {

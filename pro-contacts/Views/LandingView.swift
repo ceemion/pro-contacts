@@ -22,7 +22,7 @@ struct LandingView: View {
                     .foregroundColor(Color("primary"))
                     .font(Font.custom(Constants.Font.titleMed, size: 25))
                     .tracking(1.0)
-                Text("Your professional contacts, neatly stored and easily accessible.")
+                Text("Your professional contacts stored and easily accessible.")
                     .foregroundColor(Color("gray"))
                     .font(Font.custom(Constants.Font.main, size: 12))
 
@@ -34,7 +34,7 @@ struct LandingView: View {
                 NavigationLink(destination: RegisterView()) {
                     HStack {
                         Spacer()
-                        Text("Get Started")
+                        Text("Create Account")
                             .tracking(0.5)
                         Spacer()
                     }
