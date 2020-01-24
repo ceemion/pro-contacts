@@ -88,6 +88,7 @@ struct RegisterView: View {
 
             Spacer()
         }
+        .navigationBarTitle("", displayMode: .inline)
         .alert(isPresented: $showInputAlert) {
             Alert(
                 title: Text("All fields are required!"),

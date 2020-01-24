@@ -23,7 +23,7 @@ struct LoginView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("""
-                Welcome back.
+                Welcome,
                 Great to see you again
                 """)
                 .font(Font.custom(Constants.Font.titleMed, size: 25))
