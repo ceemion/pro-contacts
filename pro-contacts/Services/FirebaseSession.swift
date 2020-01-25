@@ -79,7 +79,7 @@ class FirebaseSession: ObservableObject {
                 }
             }
 
-            self.contacts = items
+            self.contacts = Functions().sortAscending(items)
         }
     }
 

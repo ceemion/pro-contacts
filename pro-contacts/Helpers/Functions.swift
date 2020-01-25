@@ -54,4 +54,10 @@ class Functions {
             }
         }
     }
+
+    func sortAscending(_ items: [Person]) -> [Person] {
+        return items.sorted(by: { (first, next) -> Bool in
+            first.firstName < next.firstName
+        })
+    }
 }

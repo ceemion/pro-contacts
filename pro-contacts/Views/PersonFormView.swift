@@ -17,27 +17,27 @@ struct PersonFormView: View {
     @State private var keyboardHeight: CGFloat = 0
 
     @State private var suffix: String = ""
-    @State private var firstName: String = "John"
-    @State private var lastName: String = "Travolta"
-    @State private var email: String = "jt@email.com"
-    @State private var phoneNumber: String = "1234567"
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var email: String = ""
+    @State private var phoneNumber: String = ""
     @State private var website: String = ""
     @State private var country: String = ""
 
     @State private var industry: String = ""
-    @State private var company: String = "Tesla"
+    @State private var company: String = ""
     @State private var department: String = ""
-    @State private var jobTitle: String = "designer"
+    @State private var jobTitle: String = ""
     @State private var workEmail: String = ""
     @State private var workPhoneNumber: String = ""
 
-    @State private var skype: String = "@skype"
-    @State private var linkedin: String = "linked"
-    @State private var github: String = "gith"
-    @State private var medium: String = "lamedium"
-    @State private var twitter: String = "tweetus"
-    @State private var facebook: String = "faceme"
-    @State private var instagram: String = "haw.las_okay"
+    @State private var skype: String = ""
+    @State private var linkedin: String = ""
+    @State private var github: String = ""
+    @State private var medium: String = ""
+    @State private var twitter: String = ""
+    @State private var facebook: String = ""
+    @State private var instagram: String = ""
 
     @State private var notes: String = ""
 
@@ -70,6 +70,7 @@ struct PersonFormView: View {
                         HStack(alignment: .center, spacing: 0) {
                             TextField("", text: $firstName)
                                 .textFieldStyle(ProTextFieldStyle())
+                                .autocapitalization(.words)
                             //Image(systemName: "person.badge.plus.fill")
                                 //.imageScale(.large)
                         }
@@ -79,6 +80,7 @@ struct PersonFormView: View {
                         Label(text: "Last Name")
                         TextField("", text: $lastName)
                             .textFieldStyle(ProTextFieldStyle())
+                            .autocapitalization(.words)
                     }
 
                     VStack(alignment: .leading, spacing: 5) {
@@ -140,18 +142,21 @@ struct PersonFormView: View {
                         Label(text: "Company")
                         TextField("", text: $company)
                             .textFieldStyle(ProTextFieldStyle())
+                            .autocapitalization(.words)
                     }
 
                     VStack(alignment: .leading, spacing: 5) {
                         Label(text: "Department")
                         TextField("", text: $department)
                             .textFieldStyle(ProTextFieldStyle())
+                            .autocapitalization(.words)
                     }
 
                     VStack(alignment: .leading, spacing: 5) {
                         Label(text: "Job Title")
                         TextField("", text: $jobTitle)
                             .textFieldStyle(ProTextFieldStyle())
+                            .autocapitalization(.words)
                     }
 
                     VStack(alignment: .leading, spacing: 5) {
