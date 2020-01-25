@@ -60,4 +60,15 @@ class Functions {
             first.firstName < next.firstName
         })
     }
+
+    func parseEpochTime(_ epoch: Int) -> String {
+        // For Decoding Unix Epoch time to Date().
+        let date = Date(timeIntervalSince1970: TimeInterval(epoch))
+        let formatter = DateFormatter()
+
+        formatter.dateStyle = .full
+        formatter.timeStyle = .short
+
+        return formatter.string(from: date)
+    }
 }

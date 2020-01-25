@@ -8,13 +8,6 @@
 
 import SwiftUI
 
-private let dateFormatter: DateFormatter = {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .medium
-    dateFormatter.timeStyle = .medium
-    return dateFormatter
-}()
-
 struct PersonDetailView: View {
     var person: Person
 
@@ -146,7 +139,25 @@ struct PersonDetailView: View {
                     SocialRow(type: "instagram", content: person.instagram)
                 }.padding(.horizontal, 10)
 
-                TextRow(label: "Notes", content: person.notes)
+                Group {
+                    TextRow(label: "Notes", content: person.notes)
+
+                    VStack(alignment: .leading, spacing: 5) {
+                        Label(text: "Created On")
+                        Text(Functions().parseEpochTime(person.createdAt))
+                            .font(Font.custom(Constants.Font.main, size: 14))
+                            .foregroundColor(Color("gray"))
+                    }
+
+                    if (person.createdAt != person.updatedAt) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Label(text: "Modified On")
+                            Text(Functions().parseEpochTime(person.updatedAt))
+                                .font(Font.custom(Constants.Font.main, size: 14))
+                                .foregroundColor(Color("gray"))
+                        }
+                    }
+                }
             }
             .padding()
 

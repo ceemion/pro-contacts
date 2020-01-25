@@ -112,8 +112,3 @@ class FirebaseSession: ObservableObject {
         }
     }
 }
-
-//and For Decoding Unix Epoch time to Date().
-//
-//let myTimeInterval = TimeInterval(timestamp)
-//let time = NSDate(timeIntervalSince1970: TimeInterval(myTimeInterval))
