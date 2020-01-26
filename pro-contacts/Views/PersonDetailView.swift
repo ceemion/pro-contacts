@@ -122,7 +122,7 @@ struct PersonDetailView: View {
                     TextRow(label: "Company", content: person.company)
                     TextRow(label: "Industry", content: person.industry)
                     TextRow(label: "Work Mail", content: person.workEmail)
-                    TextRow(label: "Work Phone", content: person.workPhoneNumber)
+                    TextRow(label: "Work Phone", content: "\(person.workPhoneCode) \(person.workPhoneNumber)")
                 }.padding(.leading, 10)
 
                 Text("Social Profiles")

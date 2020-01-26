@@ -25,6 +25,7 @@ struct Person: Identifiable {
     let department: String
     let jobTitle: String
     let workEmail: String
+    let workPhoneCode: String
     let workPhoneNumber: String
     let skype: String
     let linkedin: String
@@ -53,6 +54,7 @@ struct Person: Identifiable {
         self.department = ""
         self.jobTitle = ""
         self.workEmail = ""
+        self.workPhoneCode = ""
         self.workPhoneNumber = ""
         self.skype = ""
         self.linkedin = ""
@@ -86,6 +88,7 @@ struct Person: Identifiable {
         self.department = value["department"] as? String ?? ""
         self.jobTitle = value["jobTitle"] as? String ?? ""
         self.workEmail = value["workEmail"] as? String ?? ""
+        self.workPhoneCode = value["workPhoneCode"] as? String ?? ""
         self.workPhoneNumber = value["workPhoneNumber"] as? String ?? ""
         self.skype = value["skype"] as? String ?? ""
         self.linkedin = value["linkedin"] as? String ?? ""

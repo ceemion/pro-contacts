@@ -30,6 +30,7 @@ struct PersonFormView: View {
     @State private var department: String = ""
     @State private var jobTitle: String = ""
     @State private var workEmail: String = ""
+    @State private var workPhoneCode: String = "+"
     @State private var workPhoneNumber: String = ""
 
     @State private var skype: String = ""
@@ -48,6 +49,7 @@ struct PersonFormView: View {
     @State private var countrySelect: Bool = false
     @State private var industrySelect: Bool = false
     @State private var phoneCodeSelect: Bool = false
+    @State private var workPhoneCodeSelect: Bool = false
 
     var body: some View {
         NavigationView {
@@ -186,9 +188,24 @@ struct PersonFormView: View {
 
                     VStack(alignment: .leading, spacing: 5) {
                         Label(text: "Work Phone Number")
-                        TextField("", text: $workPhoneNumber)
-                            .keyboardType(.phonePad)
-                            .textFieldStyle(ProTextFieldStyle())
+                        HStack(alignment: .center, spacing: 5) {
+                            TextField("", text: $workPhoneCode)
+                                .textFieldStyle(ProTextFieldStyle())
+                                .disabled(true)
+                                .frame(width: 80)
+                                .onTapGesture {
+                                    self.workPhoneCodeSelect.toggle()
+                                }
+                            TextField("", text: $workPhoneNumber)
+                                .keyboardType(.phonePad)
+                                .textFieldStyle(ProTextFieldStyle())
+                        }
+                        .sheet(isPresented: $workPhoneCodeSelect) {
+                            PhoneCodeOptionsView(
+                                countries: self.session.countries,
+                                code: self.$workPhoneCode
+                            )
+                        }
                     }
                 }
                 .padding(.horizontal, 10)
@@ -313,6 +330,7 @@ struct PersonFormView: View {
             self.department = self.person.department
             self.jobTitle = self.person.jobTitle
             self.workEmail = self.person.workEmail
+            self.workPhoneCode = self.person.workPhoneCode.isEmpty ? "+" : self.person.workPhoneCode
             self.workPhoneNumber = self.person.workPhoneNumber
             self.skype = self.person.skype
             self.linkedin = self.person.linkedin
@@ -358,6 +376,7 @@ struct PersonFormView: View {
             "department": department,
             "jobTitle": jobTitle,
             "workEmail": workEmail,
+            "workPhoneCode": workPhoneCode,
             "workPhoneNumber": workPhoneNumber,
             "skype": skype,
             "linkedin": linkedin,
