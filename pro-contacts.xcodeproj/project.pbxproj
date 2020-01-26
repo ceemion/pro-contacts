@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		364B630623DE11B000A9FD24 /* PhoneCodeOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B630523DE11B000A9FD24 /* PhoneCodeOptionsView.swift */; };
 		36EFB68A23CCD6A8005752D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB68923CCD6A8005752D5 /* AppDelegate.swift */; };
 		36EFB68C23CCD6A8005752D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB68B23CCD6A8005752D5 /* SceneDelegate.swift */; };
 		36EFB68E23CCD6A8005752D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EFB68D23CCD6A8005752D5 /* ContentView.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		116D0322488B5CAB888A2F39 /* Pods-pro-contacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pro-contacts.debug.xcconfig"; path = "Target Support Files/Pods-pro-contacts/Pods-pro-contacts.debug.xcconfig"; sourceTree = "<group>"; };
+		364B630523DE11B000A9FD24 /* PhoneCodeOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCodeOptionsView.swift; sourceTree = "<group>"; };
 		36EFB68623CCD6A8005752D5 /* ProContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EFB68923CCD6A8005752D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36EFB68B23CCD6A8005752D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				36EFB6FD23D08C24005752D5 /* SuffixOptionsView.swift */,
 				36EFB70223D0A071005752D5 /* IndustryOptionsView.swift */,
 				36EFB70A23D5B3BD005752D5 /* CountryOptionsView.swift */,
+				364B630523DE11B000A9FD24 /* PhoneCodeOptionsView.swift */,
 			);
 			path = FormViews;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				36EFB68E23CCD6A8005752D5 /* ContentView.swift in Sources */,
 				36EFB70B23D5B3BD005752D5 /* CountryOptionsView.swift in Sources */,
 				36EFB70923D36824005752D5 /* GeometryGetter.swift in Sources */,
+				364B630623DE11B000A9FD24 /* PhoneCodeOptionsView.swift in Sources */,
 				36EFB6C723CD5FA4005752D5 /* LoginView.swift in Sources */,
 				36EFB6EC23CE0BC6005752D5 /* Form.swift in Sources */,
 				36EFB70D23D5C44E005752D5 /* Country.swift in Sources */,

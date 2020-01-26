@@ -54,7 +54,7 @@ struct PersonDetailView: View {
                 .foregroundColor(Color("gray"))
 
                 HStack(alignment: .center, spacing: 30) {
-                    Button(action: { Functions().phoneCallAction(self.person.phoneNumber) }) {
+                    Button(action: { Functions().phoneCallAction("\(self.person.phoneCode)\(self.person.phoneNumber)") }) {
                         VStack(alignment: .center, spacing: 10) {
                             Image(systemName: "phone.fill.arrow.up.right")
                                 .imageScale(.large)
@@ -108,7 +108,7 @@ struct PersonDetailView: View {
                     Spacer()
                 }
 
-                TextRow(label: "Phone", content: person.phoneNumber)
+                TextRow(label: "Phone", content: "\(person.phoneCode) \(person.phoneNumber)")
                 TextRow(label: "Email", content: person.email)
                 TextRow(label: "Website", content: person.website)
 

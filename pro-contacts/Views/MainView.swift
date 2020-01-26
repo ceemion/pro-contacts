@@ -20,8 +20,9 @@ struct MainView: View {
                 if self.session.fetchingContacts {
                     VStack(alignment: .center, spacing: 5) {
                         ActivityIndicator(shouldAnimate: self.$session.fetchingContacts)
-                        Text("Loading")
+                        Text("LOADING")
                             .font(.footnote)
+                            .foregroundColor(Color("gray"))
                     }
                 } else {
                     if self.session.contacts.isEmpty {

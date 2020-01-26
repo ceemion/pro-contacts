@@ -20,6 +20,7 @@ struct PersonFormView: View {
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var email: String = ""
+    @State private var phoneCode: String = "+"
     @State private var phoneNumber: String = ""
     @State private var website: String = ""
     @State private var country: String = ""
@@ -46,6 +47,7 @@ struct PersonFormView: View {
     @State private var suffixSelect: Bool = false
     @State private var countrySelect: Bool = false
     @State private var industrySelect: Bool = false
+    @State private var phoneCodeSelect: Bool = false
 
     var body: some View {
         NavigationView {
@@ -93,9 +95,24 @@ struct PersonFormView: View {
 
                     VStack(alignment: .leading, spacing: 5) {
                         Label(text: "Phone Number")
-                        TextField("", text: $phoneNumber)
-                            .keyboardType(.phonePad)
-                            .textFieldStyle(ProTextFieldStyle())
+                        HStack(alignment: .center, spacing: 5) {
+                            TextField("", text: $phoneCode)
+                                .textFieldStyle(ProTextFieldStyle())
+                                .disabled(true)
+                                .frame(width: 80)
+                                .onTapGesture {
+                                    self.phoneCodeSelect.toggle()
+                                }
+                            TextField("", text: $phoneNumber)
+                                .keyboardType(.phonePad)
+                                .textFieldStyle(ProTextFieldStyle())
+                        }
+                        .sheet(isPresented: $phoneCodeSelect) {
+                            PhoneCodeOptionsView(
+                                countries: self.session.countries,
+                                code: self.$phoneCode
+                            )
+                        }
                     }
 
                     VStack(alignment: .leading, spacing: 5) {
@@ -287,6 +304,7 @@ struct PersonFormView: View {
             self.firstName = self.person.firstName
             self.lastName = self.person.lastName
             self.email = self.person.email
+            self.phoneCode = self.person.phoneCode.isEmpty ? "+" : self.person.phoneCode
             self.phoneNumber = self.person.phoneNumber
             self.website = self.person.website
             self.country = self.person.country
@@ -331,6 +349,7 @@ struct PersonFormView: View {
             "firstName": firstName,
             "lastName": lastName,
             "email": email,
+            "phoneCode": phoneCode,
             "phoneNumber": phoneNumber,
             "website": website,
             "country": country,
