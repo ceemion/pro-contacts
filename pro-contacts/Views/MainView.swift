@@ -27,6 +27,9 @@ struct MainView: View {
                 } else {
                     if self.session.contacts.isEmpty {
                         VStack {
+                            Image("empty.state")
+                                .resizable()
+                                .scaledToFit()
                             Text("You have no contacts.")
                                 .font(.footnote)
                                 .foregroundColor(Color("gray"))
