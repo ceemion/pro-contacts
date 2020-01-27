@@ -356,7 +356,7 @@ struct PersonFormView: View {
     }
 
     func isFormInvalid() -> Bool {
-        return loading || firstName.isEmpty || lastName.isEmpty || email.isEmpty || phoneNumber.isEmpty || industry.isEmpty || jobTitle.isEmpty || notes.isEmpty
+        return loading || firstName.isEmpty || lastName.isEmpty || phoneNumber.isEmpty || industry.isEmpty || jobTitle.isEmpty
     }
 
     func buildPayload() -> Dictionary<String, Any> {
