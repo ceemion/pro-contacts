@@ -37,18 +37,22 @@ struct PersonDetailView: View {
                     .font(Font.custom(Constants.Font.titleMed, size: 18))
                     .foregroundColor(Color("text"))
 
-                HStack(alignment: .center, spacing: 10) {
-                    Image(systemName: "mappin")
-                        .imageScale(.medium)
-                    Text(person.country)
-                        .font(Font.custom(Constants.Font.main, size: 16))
-                        .foregroundColor(Color("text"))
+                Group {
+                    if !person.country.isEmpty {
+                        HStack(alignment: .center, spacing: 10) {
+                            Image(systemName: "mappin")
+                                .imageScale(.medium)
+                            Text(person.country)
+                                .font(Font.custom(Constants.Font.main, size: 16))
+                                .foregroundColor(Color("text"))
+                        }
+                    }
                 }
 
                 VStack {
-                    Text(person.jobTitle)
-                    Text(person.department)
-                    Text(person.company)
+                    TextRowNoTitle(content: person.jobTitle)
+                    TextRowNoTitle(content: person.department)
+                    TextRowNoTitle(content: person.company)
                 }
                 .font(Font.custom(Constants.Font.main, size: 14))
                 .foregroundColor(Color("gray"))
@@ -56,27 +60,33 @@ struct PersonDetailView: View {
                 HStack(alignment: .center, spacing: 30) {
                     Button(action: { Functions().phoneCallAction("\(self.person.phoneCode)\(self.person.phoneNumber)") }) {
                         VStack(alignment: .center, spacing: 10) {
-                            Image(systemName: "phone.fill.arrow.up.right")
+                            Image(systemName: "phone.fill")
                                 .imageScale(.large)
                                 .accessibility(label: Text("Call"))
                         }
                     }
-                    Button(action: { self.openMail.toggle() }) {
-                        VStack(alignment: .center, spacing: 10) {
-                            Image(systemName: "envelope.fill")
-                                .imageScale(.large)
-                                .accessibility(label: Text("Email"))
-                        }
-                        .alert(isPresented: self.$openMail) {
-                            Alert(
-                                title: Text("Compose Mail"),
-                                message: Text("Send an email to \(self.person.firstName) on \(self.person.email)?"),
-                                primaryButton: .default(Text("Yes")) {
-                                    Functions().openUrl("mailto:\(self.person.email)")
-                                },
-                                secondaryButton: .cancel())
+
+                    Group {
+                        if !person.email.isEmpty {
+                            Button(action: { self.openMail.toggle() }) {
+                                VStack(alignment: .center, spacing: 10) {
+                                    Image(systemName: "envelope.fill")
+                                        .imageScale(.large)
+                                        .accessibility(label: Text("Email"))
+                                }
+                                .alert(isPresented: self.$openMail) {
+                                    Alert(
+                                        title: Text("Compose Mail"),
+                                        message: Text("Send an email to \(self.person.firstName) on \(self.person.email)?"),
+                                        primaryButton: .default(Text("Yes")) {
+                                            Functions().openUrl("mailto:\(self.person.email)")
+                                        },
+                                        secondaryButton: .cancel())
+                                }
+                            }
                         }
                     }
+
                     VStack(alignment: .center, spacing: 5) {
                         Image("whatsapp.dk")
                             .resizable()
@@ -122,7 +132,7 @@ struct PersonDetailView: View {
                     TextRow(label: "Company", content: person.company)
                     TextRow(label: "Industry", content: person.industry)
                     TextRow(label: "Work Mail", content: person.workEmail)
-                    TextRow(label: "Work Phone", content: "\(person.workPhoneCode) \(person.workPhoneNumber)")
+                    TextRow(label: "Work Phone", content: "\(person.workPhoneCode)\(person.workPhoneNumber)")
                 }.padding(.leading, 10)
 
                 Text("Social Profiles")
@@ -195,6 +205,18 @@ struct PersonDetailView: View {
             PersonFormView(person: self.person)
                 .environmentObject(FirebaseSession())
         })
+    }
+}
+
+struct TextRowNoTitle: View {
+    var content: String
+
+    var body: some View {
+        Group {
+            if !content.isEmpty {
+                Text(content)
+            }
+        }
     }
 }
 

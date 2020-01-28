@@ -361,6 +361,7 @@ struct PersonFormView: View {
 
     func buildPayload() -> Dictionary<String, Any> {
         let timestamp = Int(NSDate().timeIntervalSince1970)
+        let resetWorkPhoneCode = workPhoneNumber.isEmpty ? "" : workPhoneCode
 
         return [
             "suffix": suffix,
@@ -376,7 +377,7 @@ struct PersonFormView: View {
             "department": department,
             "jobTitle": jobTitle,
             "workEmail": workEmail,
-            "workPhoneCode": workPhoneCode,
+            "workPhoneCode": resetWorkPhoneCode,
             "workPhoneNumber": workPhoneNumber,
             "skype": skype,
             "linkedin": linkedin,
