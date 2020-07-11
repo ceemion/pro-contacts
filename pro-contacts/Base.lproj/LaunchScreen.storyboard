@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,16 +15,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch.screen" translatesAutoresizingMaskIntoConstraints="NO" id="7rh-xv-IHH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="procontacts.logo.primary" translatesAutoresizingMaskIntoConstraints="NO" id="7rh-xv-IHH">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="221-yF-kZL"/>
+                                    <constraint firstAttribute="width" constant="150" id="CdE-U4-nhh"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="7rh-xv-IHH" secondAttribute="trailing" id="FIT-yt-z54"/>
-                            <constraint firstAttribute="bottom" secondItem="7rh-xv-IHH" secondAttribute="bottom" id="GnK-bf-fcC"/>
-                            <constraint firstItem="7rh-xv-IHH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="syD-Pv-GEw"/>
-                            <constraint firstItem="7rh-xv-IHH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="yOv-Ov-Ugq"/>
+                            <constraint firstItem="7rh-xv-IHH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="G0p-1M-Rif"/>
+                            <constraint firstItem="7rh-xv-IHH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LF6-oc-tr6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch.screen" width="375" height="812"/>
+        <image name="procontacts.logo.primary" width="700" height="695"/>
     </resources>
 </document>

@@ -293,6 +293,7 @@ struct PersonFormView: View {
                     }
                 }
                 .padding(.horizontal, 10)
+                .padding(.bottom, 100)
             }
             .navigationBarTitle(self.person.id.isEmpty ? "New Professional Contact" : "Update Contact", displayMode: .inline)
             .navigationBarItems(

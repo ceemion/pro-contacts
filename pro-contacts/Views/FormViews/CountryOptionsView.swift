@@ -13,28 +13,46 @@ struct CountryOptionsView: View {
 
     @Binding var country: String
     @Environment(\.presentationMode) private var presentationMode
+    
+    @State private var searchText: String = ""
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(self.countries, id: \.self) { country in
-                    Text(country.name)
-                        .padding(10)
+            VStack(alignment: .leading, spacing: 0) {
+                SearchBar(text: $searchText, placeholder: "Search countries")
+
+                ScrollView(.vertical, showsIndicators: true) {
+                    ForEach(self.countries.filter {
+                        self.searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.searchText)
+                    }, id: \.self) { country in
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack { Spacer() }
+                            Text(country.name)
+                                .foregroundColor(Color("text"))
+                                .font(Font.custom(Constants.Font.main, size: CGFloat(Constants.TextSizes.small)))
+                            HStack { Spacer() }
+                        }
+                        .padding(5)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(Color("rows.bg")))
                         .onTapGesture {
                             self.country = country.name
                             self.presentationMode.wrappedValue.dismiss()
                         }
+                    }
                 }
+                .padding(.horizontal, 10)
+                .navigationBarTitle("Select Country", displayMode: .inline)
+                .navigationBarItems(leading: Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) { Image(systemName: "xmark")
+                    .imageScale(.medium)
+                    .padding(.vertical)
+                }
+                    .accentColor(Color("primary"))
+                )
             }
-            .navigationBarTitle("Select Country", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) { Image(systemName: "xmark")
-                .imageScale(.medium)
-                .padding(.vertical)
-            }
-                .accentColor(Color("primary"))
-            )
         }
     }
 }

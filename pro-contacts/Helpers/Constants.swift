@@ -21,12 +21,13 @@ struct Constants {
     struct TextSizes {
         static let title = 18.0
         static let body = 16.0
+        static let small = 14.0
     }
 
     struct FormOptions {
         static let suffixes = ["Mr", "Mrs", "Ms", "Engr", "Prof", "Dr"]
         static let industries = [
-            "Agriculture", "Automotive", "Aerospace", "Electronics", "Software"
+            "Advertising", "Agriculture", "Automotive", "Aerospace", "Electronics", "Software"
         ]
     }
 }

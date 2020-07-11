@@ -18,25 +18,33 @@ private let dateFormatter: DateFormatter = {
 
 struct PersonsView: View {
     var data: [Person]
+    @State private var searchText: String = ""
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .leading, spacing: 10) {
-                ForEach(data, id: \.id) { person in
-                    NavigationLink( destination: PersonDetailView(person: person) ) {
-                        RowView(person: person)
-                            .font(.body)
-                            .padding(10)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .fill(Color("rows.bg")))
+        VStack(alignment: .leading, spacing: 0) {
+            SearchBar(text: $searchText, placeholder: "Search...")
+            
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(data.filter {
+                        self.searchText.isEmpty ? true : "\($0.firstName) \($0.lastName)".localizedCaseInsensitiveContains(self.searchText)
+                    }, id: \.id) { person in
+                        NavigationLink( destination: PersonDetailView(person: person) ) {
+                            RowView(person: person)
+                                .font(.body)
+                                .padding(10)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+//                                        .fill(Color("primary").opacity(0.1)))
+                                        .fill(Color("rows.bg")))
+                        }
                     }
                 }
+                .padding(.horizontal, 10)
+                //.onDelete { indices in
+                //    print("welcome")
+                //}
             }
-            .padding(.horizontal, 10)
-            //.onDelete { indices in
-            //    print("welcome")
-            //}
         }
     }
 }
